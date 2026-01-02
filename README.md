@@ -1,2 +1,1 @@
-# kuru-mod
-# kuru-mod
+TBD: steam page link
