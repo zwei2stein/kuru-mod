@@ -1,0 +1,6 @@
+/Assemblies/*
+/Source/Kuru/packages/*
+/Source/Kuru/bin/*
+/Source/Kuru/obj/*
+/Source/Kuru/.idea/*
+Source/Kuru/Kuru.sln.DotSettings.user
