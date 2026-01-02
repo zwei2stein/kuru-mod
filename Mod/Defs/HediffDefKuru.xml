@@ -2,7 +2,7 @@
 <Defs>
 
     <HediffDef ParentName="InjuryBase">
-        <defName>BrainDamage</defName>
+        <defName>KuruMod_BrainDamage</defName>
         <label>brain damage</label>
         <labelNoun>a brain damage</labelNoun>
         <description>A brain damage.</description>
@@ -20,7 +20,7 @@
     </HediffDef>
 
     <HediffDef>
-        <defName>Kuru</defName>
+        <defName>KuruMod_Kuru</defName>
         <label>kuru</label>
         <description>Neural degradation caused by eating meat contaminated with misfolded prions. It is known as a laughing sickness.</description>
         <hediffClass>Kuru.HediffKuru</hediffClass>
@@ -45,7 +45,7 @@
                 </capMods>
                 <mentalStateGivers>
                     <li>
-                        <mentalState>LaughingFit</mentalState>
+                        <mentalState>KuruMod_LaughingFit</mentalState>
                         <mtbDays>5</mtbDays>
                     </li>
                     <li>

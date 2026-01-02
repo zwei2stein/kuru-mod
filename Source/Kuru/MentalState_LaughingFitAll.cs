@@ -103,7 +103,7 @@ namespace Kuru
                 return (Job)null;
             return !SocialInteractionUtility.BestInteractableCell(pawn, mentalState.target).IsValid
                 ? (Job)null
-                : JobMaker.MakeJob(KuruDefOf.LaughAt, (LocalTargetInfo)(Thing)mentalState.target);
+                : JobMaker.MakeJob(KuruDefOf.KuruMod_LaughAt, (LocalTargetInfo)(Thing)mentalState.target);
         }
     }
 
@@ -132,7 +132,7 @@ namespace Kuru
         {
             return Toils_General.Do((Action)(() =>
             {
-                if (!this.pawn.interactions.TryInteractWith(this.Target, KuruDefOf.DisturbingLaugh) ||
+                if (!this.pawn.interactions.TryInteractWith(this.Target, KuruDefOf.KuruMod_DisturbingLaugh) ||
                     !(this.pawn.MentalState is MentalState_LaughingFitAll mentalState2))
                     return;
                 mentalState2.lastLaughTicks = Find.TickManager.TicksGame;

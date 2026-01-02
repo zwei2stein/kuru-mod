@@ -11,7 +11,7 @@ namespace Kuru
     {
         static KuruModStatic()
         {
-            Log.Message("[KuruMod] loading!");
+            //Log.Message("[KuruMod] loading!");
 
             //These defs are generated runtime, we much patch them in code.
             foreach (var def in DefDatabase<ThingDef>.AllDefs)
@@ -19,11 +19,11 @@ namespace Kuru
                 switch (def.defName)
                 {
                     case "Corpse_Human":
-                        Log.Message("[KuruMod] Patching " + def.defName);
+                        //Log.Message("[KuruMod] Patching " + def.defName);
                         def.comps.Add(new CompCorpseKuruCarryingProperties());
                         break;
                     case "Meat_Human":
-                        Log.Message("[KuruMod] Patching " + def.defName);
+                        //Log.Message("[KuruMod] Patching " + def.defName);
                         def.comps.Add(new CompFoodKuruCarryingProperties());
                         break;
                 }
@@ -44,9 +44,9 @@ namespace Kuru
             if (!Rand.Chance(KuruModSettings.baseKuruInfectionChance * cause.GetKuruCarrierChance()))
                 return;
 
-            if (pawn.health.hediffSet.GetFirstHediffOfDef(KuruDefOf.Kuru) == null)
+            if (pawn.health.hediffSet.GetFirstHediffOfDef(KuruDefOf.KuruMod_Kuru) == null)
             {
-                pawn.health.AddHediff(HediffMaker.MakeHediff(KuruDefOf.Kuru, pawn, pawn.health.hediffSet.GetBrain()));
+                pawn.health.AddHediff(HediffMaker.MakeHediff(KuruDefOf.KuruMod_Kuru, pawn, pawn.health.hediffSet.GetBrain()));
             }
 
             if (ingestible == null) return; //pawn was just generated

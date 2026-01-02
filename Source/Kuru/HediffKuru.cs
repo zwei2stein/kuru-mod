@@ -35,7 +35,7 @@ namespace Kuru
                 this.nextBrainDamageIn = NextStdNormal(); 
                 this.lastBrainDamageTick = this.ageTicks;
                 
-                var crush = HediffMaker.MakeHediff(KuruDefOf.BrainDamage, pawn, pawn.health.hediffSet.GetBrain());
+                var crush = HediffMaker.MakeHediff(KuruDefOf.KuruMod_BrainDamage, pawn, pawn.health.hediffSet.GetBrain());
                 var comp = crush.TryGetComp<HediffComp_GetsPermanent>();
                 comp.IsPermanent = true;
                 crush.Severity = 1.0f;

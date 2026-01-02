@@ -2,14 +2,14 @@
 <Defs>
 
 	<MentalBreakDef>
-		<defName>LaughingFit</defName>
-		<mentalState>LaughingFit</mentalState>
+		<defName>KuruMod_LaughingFit</defName>
+		<mentalState>KuruMod_LaughingFit</mentalState>
 		<baseCommonality>0.5</baseCommonality>
 		<intensity>Minor</intensity>
 	</MentalBreakDef>
 
-	<MentalStateDef Name="LaughingFit" ParentName="BaseMentalState">
-		<defName>LaughingFit</defName>
+	<MentalStateDef Name="KuruMod_LaughingFit" ParentName="BaseMentalState">
+		<defName>KuruMod_LaughingFit</defName>
 		<stateClass>Kuru.MentalState_LaughingFitAll</stateClass>
 		<workerClass>Kuru.MentalStateWorker_LaughingFitAll</workerClass>
 		<label>laughing fit</label>
@@ -34,16 +34,16 @@
 	</MentalStateDef>
 
 	<JobDef>
-		<defName>LaughAt</defName>
+		<defName>KuruMod_LaughAt</defName>
 		<driverClass>Kuru.JobDriver_LaughAt</driverClass>
 		<reportString>laughing at TargetA.</reportString>
 	</JobDef>
 
 	<InteractionDef>
-		<defName>DisturbingLaugh</defName>
+		<defName>KuruMod_DisturbingLaugh</defName>
 		<label>disturbing laugh</label>
 		<symbol>Things/Mote/SpeechSymbols/Slight</symbol>
-		<recipientThought>WasLaughedAt</recipientThought>
+		<recipientThought>KuruMod_WasLaughedAt</recipientThought>
 		<logRulesInitiator>
 			<rulesStrings>
 				<li>r_logentry->[INITIATOR_nameDef] [laughed] at [RECIPIENT_nameDef] [noreason].</li>
@@ -62,7 +62,7 @@
 	</InteractionDef>
 
 	<ThoughtDef>
-		<defName>WasLaughedAt</defName>
+		<defName>KuruMod_WasLaughedAt</defName>
 		<durationDays>1</durationDays>
 		<stackLimit>10</stackLimit>
 		<developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>

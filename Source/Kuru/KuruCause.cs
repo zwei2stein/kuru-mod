@@ -22,7 +22,7 @@ namespace Kuru
                 return KuruCause.None;
             }
 
-            if (pawn.health.hediffSet.GetFirstHediffOfDef(KuruDefOf.Kuru) != null)
+            if (pawn.health.hediffSet.GetFirstHediffOfDef(KuruDefOf.KuruMod_Kuru) != null)
             {
                 return KuruCause.MeatOfKuruCarrier;
             }
