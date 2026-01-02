@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+    <Operation Class="PatchOperationConditional">
+        <xpath>/Defs/ThingDef[defName = &quot;MealSurvivalPack&quot;]/comps</xpath>
+        <nomatch Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName = &quot;MealSurvivalPack&quot;]</xpath>
+            <value>
+                <comps>
+                    <li Class="Kuru.CompFoodKuruCarryingProperties">
+                        <compClass>Kuru.CompFoodKuruCarrying</compClass>
+                    </li>
+                </comps>
+            </value>
+        </nomatch>
+        <match Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName = &quot;MealSurvivalPack&quot;]/comps</xpath>
+            <value>
+                <li Class="Kuru.CompFoodKuruCarryingProperties">
+                    <compClass>Kuru.CompFoodKuruCarrying</compClass>
+                </li>
+            </value>
+        </match>
+    </Operation>
+    
+    <Operation Class="PatchOperationConditional">
+        <xpath>/Defs/ThingDef[defName = &quot;MealNutrientPaste&quot;]/comps</xpath>
+        <nomatch Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName = &quot;MealNutrientPaste&quot;]</xpath>
+            <value>
+                <comps>
+                    <li Class="Kuru.CompFoodKuruCarryingProperties">
+                        <compClass>Kuru.CompFoodKuruCarrying</compClass>
+                    </li>
+                </comps>
+            </value>
+        </nomatch>
+        <match Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName = &quot;MealNutrientPaste&quot;]/comps</xpath>
+            <value>
+                <li Class="Kuru.CompFoodKuruCarryingProperties">
+                    <compClass>Kuru.CompFoodKuruCarrying</compClass>
+                </li>
+            </value>
+        </match>
+    </Operation>
+    
+    <Operation Class="PatchOperationConditional">
+        <xpath>/Defs/ThingDef[defName = &quot;MealSimple&quot;]/comps</xpath>
+        <nomatch Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName = &quot;MealSimple&quot;]</xpath>
+            <value>
+                <comps>
+                    <li Class="Kuru.CompFoodKuruCarryingProperties">
+                        <compClass>Kuru.CompFoodKuruCarrying</compClass>
+                    </li>
+                </comps>
+            </value>
+        </nomatch>
+        <match Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName = &quot;MealSimple&quot;]/comps</xpath>
+            <value>
+                <li Class="Kuru.CompFoodKuruCarryingProperties">
+                    <compClass>Kuru.CompFoodKuruCarrying</compClass>
+                </li>
+            </value>
+        </match>
+    </Operation>
+    
+    <Operation Class="PatchOperationConditional">
+        <xpath>/Defs/ThingDef[defName = &quot;MealFine&quot;]/comps</xpath>
+        <nomatch Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName = &quot;MealFine&quot;]</xpath>
+            <value>
+                <comps>
+                    <li Class="Kuru.CompFoodKuruCarryingProperties">
+                        <compClass>Kuru.CompFoodKuruCarrying</compClass>
+                    </li>
+                </comps>
+            </value>
+        </nomatch>
+        <match Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName = &quot;MealFine&quot;]/comps</xpath>
+            <value>
+                <li Class="Kuru.CompFoodKuruCarryingProperties">
+                    <compClass>Kuru.CompFoodKuruCarrying</compClass>
+                </li>
+            </value>
+        </match>
+    </Operation>
+    
+    <Operation Class="PatchOperationConditional">
+        <xpath>/Defs/ThingDef[defName = &quot;MealFine_Meat&quot;]/comps</xpath>
+        <nomatch Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName = &quot;MealFine_Meat&quot;]</xpath>
+            <value>
+                <comps>
+                    <li Class="Kuru.CompFoodKuruCarryingProperties">
+                        <compClass>Kuru.CompFoodKuruCarrying</compClass>
+                    </li>
+                </comps>
+            </value>
+        </nomatch>
+        <match Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName = &quot;MealFine_Meat&quot;]/comps</xpath>
+            <value>
+                <li Class="Kuru.CompFoodKuruCarryingProperties">
+                    <compClass>Kuru.CompFoodKuruCarrying</compClass>
+                </li>
+            </value>
+        </match>
+    </Operation>
+    
+    <Operation Class="PatchOperationConditional">
+        <xpath>/Defs/ThingDef[defName = &quot;MealLavish&quot;]/comps</xpath>
+        <nomatch Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName = &quot;MealLavish&quot;]</xpath>
+            <value>
+                <comps>
+                    <li Class="Kuru.CompFoodKuruCarryingProperties">
+                        <compClass>Kuru.CompFoodKuruCarrying</compClass>
+                    </li>
+                </comps>
+            </value>
+        </nomatch>
+        <match Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName = &quot;MealLavish&quot;]/comps</xpath>
+            <value>
+                <li Class="Kuru.CompFoodKuruCarryingProperties">
+                    <compClass>Kuru.CompFoodKuruCarrying</compClass>
+                </li>
+            </value>
+        </match>
+    </Operation>
+    
+    <Operation Class="PatchOperationConditional">
+        <xpath>/Defs/ThingDef[defName = &quot;MealLavish_Meat&quot;]/comps</xpath>
+        <nomatch Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName = &quot;MealLavish_Meat&quot;]</xpath>
+            <value>
+                <comps>
+                    <li Class="Kuru.CompFoodKuruCarryingProperties">
+                        <compClass>Kuru.CompFoodKuruCarrying</compClass>
+                    </li>
+                </comps>
+            </value>
+        </nomatch>
+        <match Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName = &quot;MealLavish_Meat&quot;]/comps</xpath>
+            <value>
+                <li Class="Kuru.CompFoodKuruCarryingProperties">
+                    <compClass>Kuru.CompFoodKuruCarrying</compClass>
+                </li>
+            </value>
+        </match>
+    </Operation>
+    
+    <Operation Class="PatchOperationConditional">
+        <xpath>/Defs/ThingDef[defName = &quot;Pemmican&quot;]/comps</xpath>
+        <nomatch Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName = &quot;Pemmican&quot;]</xpath>
+            <value>
+                <comps>
+                    <li Class="Kuru.CompFoodKuruCarryingProperties">
+                        <compClass>Kuru.CompFoodKuruCarrying</compClass>
+                    </li>
+                </comps>
+            </value>
+        </nomatch>
+        <match Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName = &quot;Pemmican&quot;]/comps</xpath>
+            <value>
+                <li Class="Kuru.CompFoodKuruCarryingProperties">
+                    <compClass>Kuru.CompFoodKuruCarrying</compClass>
+                </li>
+            </value>
+        </match>
+    </Operation>
+    
+    <Operation Class="PatchOperationConditional">
+        <xpath>/Defs/ThingDef[defName = &quot;Kibble&quot;]/comps</xpath>
+        <nomatch Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName = &quot;Kibble&quot;]</xpath>
+            <value>
+                <comps>
+                    <li Class="Kuru.CompFoodKuruCarryingProperties">
+                        <compClass>Kuru.CompFoodKuruCarrying</compClass>
+                    </li>
+                </comps>
+            </value>
+        </nomatch>
+        <match Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName = &quot;Kibble&quot;]/comps</xpath>
+            <value>
+                <li Class="Kuru.CompFoodKuruCarryingProperties">
+                    <compClass>Kuru.CompFoodKuruCarrying</compClass>
+                </li>
+            </value>
+        </match>
+    </Operation>
+    
+</Patch>

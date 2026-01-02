@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <HediffDef ParentName="InjuryBase">
+        <defName>BrainDamage</defName>
+        <label>brain damage</label>
+        <labelNoun>a brain damage</labelNoun>
+        <description>A brain damage.</description>
+        <comps>
+            <li Class="HediffCompProperties_GetsPermanent">
+                <permanentLabel>brain damage scar</permanentLabel>
+            </li>
+        </comps>
+        <injuryProps>
+            <painPerSeverity>0.0125</painPerSeverity>
+            <averagePainPerSeverityPermanent>0.00625</averagePainPerSeverityPermanent>
+            <canMerge>true</canMerge>
+            <destroyedLabel>Destroyed</destroyedLabel>
+        </injuryProps>
+    </HediffDef>
+
+    <HediffDef>
+        <defName>Kuru</defName>
+        <label>kuru</label>
+        <description>Neural degradation caused by eating meat contaminated with misfolded prions. It is known as a laughing sickness.</description>
+        <hediffClass>Kuru.HediffKuru</hediffClass>
+        <defaultLabelColor>(1,1,0.5)</defaultLabelColor>
+        <tendable>false</tendable>
+        <skinColorTint>(0.37, 0.15, 0.1)</skinColorTint>
+        <stages>
+            <li>
+                <capMods>
+                    <li>
+                        <capacity>Talking</capacity>
+                        <offset>-0.1</offset>
+                    </li>
+                    <li>
+                        <capacity>Moving</capacity>
+                        <offset>-0.1</offset>
+                    </li>
+                    <li>
+                        <capacity>Manipulation</capacity>
+                        <offset>-0.1</offset>
+                    </li>
+                </capMods>
+                <mentalStateGivers>
+                    <li>
+                        <mentalState>LaughingFit</mentalState>
+                        <mtbDays>5</mtbDays>
+                    </li>
+                    <li>
+                        <mentalState>WanderConfused</mentalState>
+                        <mtbDays>60</mtbDays>
+                    </li>
+                    <li>
+                        <mentalState>InsaneRamblings</mentalState>
+                        <mtbDays>60</mtbDays>
+                    </li>
+                    <li>
+                        <mentalState>InsultingSpree</mentalState>
+                        <mtbDays>60</mtbDays>
+                    </li>
+                    <li>
+                        <mentalState>Wander_Psychotic</mentalState>
+                        <mtbDays>60</mtbDays>
+                    </li>
+                    <li>
+                        <mentalState>Wander_Sad</mentalState>
+                        <mtbDays>60</mtbDays>
+                    </li>
+                </mentalStateGivers>
+            </li>
+        </stages>
+    </HediffDef>
+    
+</Defs>

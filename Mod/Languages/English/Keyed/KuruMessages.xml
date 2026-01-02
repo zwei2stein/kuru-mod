@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+    <KuruModName>Kuru mod</KuruModName>
+
+    <MessageFoodKuru>{PAWN_labelShort} has started exhibiting symptoms of Kuru after eating: {FOOD_labelShort}.</MessageFoodKuru>
+
+    <MessageProgressedKuru>{PAWN_labelShort} got brain damage from Kuru.</MessageProgressedKuru>
+
+    <MeatHumanDesc>Raw butchered flesh. Can be cooked into meals or eaten raw, although most humans dislike the idea. May be dangerous.</MeatHumanDesc>
+
+    <KuruOptions_baseKuruInfectionChance>Base infection chance: </KuruOptions_baseKuruInfectionChance>
+    <KuruOptions_baseKuruInfectionChance_tooltip>Different sources have different chances of spreading infection (eating Kuru infected human has very high chance, eating random human has very, very, very low.), this is global setting that affects all of them.</KuruOptions_baseKuruInfectionChance_tooltip>
+    
+    <KuruOptions_worldgenPawnsCanBeInfected>Pawns can be pre-infected</KuruOptions_worldgenPawnsCanBeInfected>
+    <KuruOptions_worldgenPawnsCanBeInfected_tooltip>Any pawn which fulfills criteria for having chance of having Kuru can spawn already infected. This includes guests, traders, raids, etc...</KuruOptions_worldgenPawnsCanBeInfected_tooltip>
+    
+    <KuruOptions_progressionSpeed>Speed of brain damage over time, roughly</KuruOptions_progressionSpeed>
+    <ProgressionSpeed_SECOND>Each seccond (debug speed)</ProgressionSpeed_SECOND>
+    <ProgressionSpeed_DAY>Daily (debug speed)</ProgressionSpeed_DAY>
+    <ProgressionSpeed_QUADRUM>Seasonally (default)</ProgressionSpeed_QUADRUM>
+    <ProgressionSpeed_YEAR>Yearly</ProgressionSpeed_YEAR>
+    
+    <KuruOptions_infectionSources_label>Possible infection source:</KuruOptions_infectionSources_label>
+    
+    <KuruOptions_infectFromIdeologion>Ideologion</KuruOptions_infectFromIdeologion>
+    <KuruOptions_infectFromIdeologion_tooltip>Cultures practicing or permitting cannibalism, inherent chance </KuruOptions_infectFromIdeologion_tooltip>
+    
+    <KuruOptions_infectFromRecentIngestion>Recent human ingestion</KuruOptions_infectFromRecentIngestion>
+    <KuruOptions_infectFromRecentIngestion_tooltip>Pawns that recently ate human meat, inherent chance </KuruOptions_infectFromRecentIngestion_tooltip>
+    
+    <KuruOptions_infectFromTraits>Traits</KuruOptions_infectFromTraits>
+    <KuruOptions_infectFromTraits_tooltip>Pawns having Cannibal trait, inherent chance </KuruOptions_infectFromTraits_tooltip>
+    
+</LanguageData>

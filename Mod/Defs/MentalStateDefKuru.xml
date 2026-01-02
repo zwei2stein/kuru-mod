@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<MentalBreakDef>
+		<defName>LaughingFit</defName>
+		<mentalState>LaughingFit</mentalState>
+		<baseCommonality>0.5</baseCommonality>
+		<intensity>Minor</intensity>
+	</MentalBreakDef>
+
+	<MentalStateDef Name="LaughingFit" ParentName="BaseMentalState">
+		<defName>LaughingFit</defName>
+		<stateClass>Kuru.MentalState_LaughingFitAll</stateClass>
+		<workerClass>Kuru.MentalStateWorker_LaughingFitAll</workerClass>
+		<label>laughing fit</label>
+		<category>Misc</category>
+		<colonistsOnly>true</colonistsOnly>
+		<blockRandomInteraction>true</blockRandomInteraction>
+		<requiredCapacities>
+			<li>Talking</li>
+		</requiredCapacities>
+		<minTicksBeforeRecovery>25000</minTicksBeforeRecovery>
+		<maxTicksBeforeRecovery>45000</maxTicksBeforeRecovery>
+		<recoveryMtbDays>0.166</recoveryMtbDays>
+		<recoverFromSleep>true</recoverFromSleep>
+		<moodRecoveryThought>Catharsis</moodRecoveryThought>
+		<blockNormalThoughts>true</blockNormalThoughts>
+		<nameColor>(0.98,0.48,0.16)</nameColor>
+		<recoveryMessage>{0} is no longer having laughing fit.</recoveryMessage>
+		<beginLetter>{0} is having laughing fit.\n\n[PAWN_pronoun] will wander around, randomly laughing, unsettling others.</beginLetter>
+		<beginLetterDef>NegativeEvent</beginLetterDef>
+		<baseInspectLine>Mental state: Laughing fit</baseInspectLine>
+		<allowBeatfire>true</allowBeatfire>
+	</MentalStateDef>
+
+	<JobDef>
+		<defName>LaughAt</defName>
+		<driverClass>Kuru.JobDriver_LaughAt</driverClass>
+		<reportString>laughing at TargetA.</reportString>
+	</JobDef>
+
+	<InteractionDef>
+		<defName>DisturbingLaugh</defName>
+		<label>disturbing laugh</label>
+		<symbol>Things/Mote/SpeechSymbols/Slight</symbol>
+		<recipientThought>WasLaughedAt</recipientThought>
+		<logRulesInitiator>
+			<rulesStrings>
+				<li>r_logentry->[INITIATOR_nameDef] [laughed] at [RECIPIENT_nameDef] [noreason].</li>
+				<li>laughed->laughed</li>
+				<li>laughed->giggled</li>
+				<li>laughed->chuckled</li>
+				<li>laughed->cackled</li>
+				<li>noreason->frivolously</li>
+				<li>noreason->for no reason</li>
+				<li>noreason->randomly</li>
+				<li>noreason->thoughtlessly</li>
+				<li>noreason->nonchalantly</li>
+				<li>noreason->indifferently</li>
+			</rulesStrings>
+		</logRulesInitiator>
+	</InteractionDef>
+
+	<ThoughtDef>
+		<defName>WasLaughedAt</defName>
+		<durationDays>1</durationDays>
+		<stackLimit>10</stackLimit>
+		<developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+		<nullifyingHediffs>
+			<li>Inhumanized</li>
+		</nullifyingHediffs>
+		<stages>
+			<li>
+				<label>mocked</label>
+				<description>A laughing fit made me very creeped out. Why me? What did I do?</description>
+				<baseMoodEffect>-6</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+	
+</Defs>
