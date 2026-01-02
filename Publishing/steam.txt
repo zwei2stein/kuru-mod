@@ -1,0 +1,48 @@
+
+[h1]Kuru mod[/h1]
+
+So, you are eating human meat. Well, that is not without risk, not funny.
+
+[h2]Features[/h2] 
+
+[list]
+    [*]New mental break, "Laughing fit"
+    [*]Kuru disease, an untreatable infection that spreads through eading human meat
+    [*]Raiders from cannibalim-positive cultures can come already suffering kuru infection.
+[/list]
+
+[hr][/hr]
+
+[h2]Kuru, the laughing sickness[/h2] 
+
+Kuru causes mood instability, giving pawns chance of various mental breaks, inluding severe Laughing fits.
+
+It also debilitates pawns, making ordinary tasks a bit more difficult.
+
+But most importantly, it literally eats the brain. It does cause brain damage over time, both causing pain and consciousness loss.
+
+Eventually, killing pawn because their brain is just not there anymore.
+
+[h3]Spead vectors[/h3] 
+
+Of course, if [spoiler]you eat actual, known, kuru carrier, you will be[/spoiler] infected.
+
+But [spoiler]meat of any human that partakes in cannibalism - has ideologion that permits eating humans[/spoiler] is not out of question: kuru is endemic to cultures practicing cannibalism.
+
+Some pawns will tell you [spoiler]they only have cravings and would like a taste, but did they already? Pawn that Cannibal trait or hasever eaten human meat can be rarely vector.[/spoiler] One might not want to risk that.
+
+Kuru is prion infection, so [spoiler]cooking meat will not prevent transmition[/spoiler]. Be carefull about [spoiler]that human meat kibble[/spoiler].
+
+[h3]Treatment options[/h3]
+
+If you can [spoiler]be on top of brain damage[/spoiler], your pawn can lead a long, productive life full of laughter.
+
+Use [spoiler]any method that can heal permanent scars[/spoiler].
+
+You can also just [spoiler]destroy brain completely and revive[/spoiler] pawn.
+
+[hr][/hr]
+
+[h2]Thanks[/h2]
+
+A lot of thanks to rimworld modding discord for help.
