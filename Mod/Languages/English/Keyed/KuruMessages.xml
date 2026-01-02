@@ -20,6 +20,9 @@
     <ProgressionSpeed_DAY>Daily (debug speed)</ProgressionSpeed_DAY>
     <ProgressionSpeed_QUADRUM>Seasonally (default)</ProgressionSpeed_QUADRUM>
     <ProgressionSpeed_YEAR>Yearly</ProgressionSpeed_YEAR>
+
+    <KuruOptions_butcherSkillMatters>Skilled butcher can prevent transmition</KuruOptions_butcherSkillMatters>
+    <KuruOptions_butcherSkillMatters_tooltip>Cooking skill when butchering pawn matters and can prevent transmition.</KuruOptions_butcherSkillMatters_tooltip>
     
     <KuruOptions_infectionSources_label>Possible infection source:</KuruOptions_infectionSources_label>
     

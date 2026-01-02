@@ -25,13 +25,26 @@ namespace Kuru
     [HarmonyPatch(typeof(Corpse), nameof(Corpse.ButcherProducts))] // if possible use nameof() here
     public class ButcherPatch
     {
-        static void Postfix(ref IEnumerable<Thing> __result, ref Corpse __instance)
+        static void Postfix(ref IEnumerable<Thing> __result, ref Corpse __instance, Pawn butcher)
         {
             // propagate kuru causes to butcher results if we have comp (= human corpse, human meat)
 
             var compCorpseKuruCarrying = __instance.TryGetComp<CompCorpseKuruCarrying>();
 
             if (compCorpseKuruCarrying == null) return;
+
+
+            if (KuruModSettings.butcherSkillMatters)
+            {
+                // 0 - 20 -> 20 skill gives 50% chance of avoiding infections
+                var butcherSkill = 0.5f * butcher.skills.AverageOfRelevantSkillsFor(KuruDefOf.Cooking) / 20;
+
+                if (Rand.Chance(butcherSkill))
+                {
+                    //Log.Message("[KuruMod] butcherSkill " + butcherSkill + " prevented infection");
+                    return;
+                }
+            }
 
             foreach (var thing in __result)
             {

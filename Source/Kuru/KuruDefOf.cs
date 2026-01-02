@@ -12,6 +12,8 @@ namespace Kuru
 
         public static TraitDef Cannibal; //Vanilla core cannibal trait def
 
+        public static WorkTypeDef Cooking;
+
         public static JobDef KuruMod_LaughAt;
 
         public static InteractionDef KuruMod_DisturbingLaugh;

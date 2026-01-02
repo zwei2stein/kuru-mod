@@ -100,6 +100,11 @@ namespace Kuru
 
                 Find.WindowStack.Add((Window)new FloatMenu(options));
             }
+            
+            listingStandard.CheckboxLabeled(
+                "KuruOptions_butcherSkillMatters".Translate(),
+                ref KuruModSettings.butcherSkillMatters,
+                "KuruOptions_butcherSkillMatters_tooltip".Translate());
 
             listingStandard.GapLine();
 
@@ -187,7 +192,8 @@ namespace Kuru
         public static ProgressionSpeed progressionSpeed = ProgressionSpeed.QUADRUM;
         public static float baseKuruInfectionChance = 1f;
         public static bool worldgenPawnsCanBeInfected = true;
-
+        public static bool butcherSkillMatters = true;
+        
         public static bool infectFromIdeologion = true;
         public static bool infectFromRecentIngestion = true;
         public static bool infectFromTraits = true;
@@ -197,6 +203,7 @@ namespace Kuru
             Scribe_Values.Look<ProgressionSpeed>(ref progressionSpeed, "progressionSpeed", ProgressionSpeed.QUADRUM);
             Scribe_Values.Look<float>(ref baseKuruInfectionChance, "baseKuruInfectionChance", 1f);
             Scribe_Values.Look<bool>(ref worldgenPawnsCanBeInfected, "worldgenPawnsCanBeInfected", true);
+            Scribe_Values.Look<bool>(ref butcherSkillMatters, "butcherSkillMatters", true);
 
             Scribe_Values.Look<bool>(ref infectFromIdeologion, "infectFromIdeologion", true);
             Scribe_Values.Look<bool>(ref infectFromRecentIngestion, "infectFromRecentIngestion", true);
