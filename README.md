@@ -5,7 +5,7 @@ Steam workshop link: <https://steamcommunity.com/sharedfiles/filedetails/?id=363
 
 ## Quick about
 
-Steam blurb text is here: </Publishing/steam.txt>
+[Steam blurb text is in this repo](/Publishing/steam.txt)
 
 ![](/Publishing/cannibal_101.png)
 
