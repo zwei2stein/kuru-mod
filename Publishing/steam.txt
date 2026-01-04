@@ -1,4 +1,3 @@
-
 [h1]Kuru mod[/h1]
 
 So, you are eating human meat. Well, that is not without risk, not funny.
@@ -40,6 +39,10 @@ If you can [spoiler]be on top of brain damage[/spoiler], your pawn can lead a lo
 Use [spoiler]any method that can heal permanent scars[/spoiler].
 
 You can also just [spoiler]destroy brain completely and revive[/spoiler] pawn.
+
+[hr][/hr]
+
+[url=https://github.com/zwei2stein/kuru-mod/] source code [/url] 
 
 [hr][/hr]
 
