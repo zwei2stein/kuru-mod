@@ -3,10 +3,10 @@
 
 Steam workshop link: <https://steamcommunity.com/sharedfiles/filedetails/?id=3637604738>
 
-# Quick about
+## Quick about
 
-!(/Publishing/cannibal_101.png)
+![](/Publishing/cannibal_101.png)
 
-!(/Publishing/brain_damage.png)
+![](/Publishing/brain_damage.png)
 
-!(/Publishing/laughing_fit.png)
+![](/Publishing/laughing_fit.png)
