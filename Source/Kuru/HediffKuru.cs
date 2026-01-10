@@ -49,9 +49,11 @@ namespace Kuru
                 else
                 {
                     pawn.health.AddHediff(crush);
-                    Messages.Message(
-                        "MessageProgressedKuru".Translate((NamedArgument)pawn.LabelShort, pawn.Named("PAWN")),
-                        MessageTypeDefOf.NegativeEvent);
+                    if (PawnUtility.ShouldSendNotificationAbout(pawn))
+                        Messages.Message(
+                            "MessageProgressedKuru".Translate((NamedArgument)pawn.LabelShort, pawn.Named("PAWN")), 
+                            (LookTargets) (Thing) pawn,
+                            MessageTypeDefOf.NegativeEvent);
                 }
 
             }

@@ -57,7 +57,7 @@ namespace Kuru
             Messages.Message(
                 "MessageFoodKuru".Translate((NamedArgument)pawn.LabelShort,
                         (NamedArgument)ingestible.LabelCapNoCount, pawn.Named("PAWN"), ingestible.Named("FOOD"))
-                    .CapitalizeFirst(), (Thing)pawn, MessageTypeDefOf.NegativeEvent);
+                    .CapitalizeFirst(), (LookTargets) (Thing) pawn, MessageTypeDefOf.NegativeEvent);
         }
     }
 
