@@ -15,10 +15,19 @@ namespace Kuru
 
     public static class KuruCauseUtils
     {
+        
         public static KuruCause CauseFromPawn(Pawn pawn)
         {
             if (pawn == null)
             {
+                return KuruCause.None;
+            }
+
+            if ((KuruModSettings.luciferiumCures && pawn.health.hediffSet.GetFirstHediffOfDef(KuruDefOf.LuciferiumAddiction) != null)
+                || (KuruModSettings.naturalCannibalCures && pawn.genes.HasActiveGene(KuruDefOf.KuruMod_NaturalCannibal)))
+            {
+                //Luciferium cures kuru, pawn can't spawn with kuru
+                //Natural Cannibal gene also heals kuru, so pawn will not spawn with it
                 return KuruCause.None;
             }
 

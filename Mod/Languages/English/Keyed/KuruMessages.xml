@@ -7,6 +7,10 @@
 
     <MessageProgressedKuru>{PAWN_labelShort} got brain damage from Kuru.</MessageProgressedKuru>
 
+    <MessageHealedKuruLuciferium>Luciferium mechanites adapted to Kuru and removed it from {PAWN_labelShort}.</MessageHealedKuruLuciferium>
+
+    <MessageHealedKuruNaturalCannibal>Kuru infection disappeared from {PAWN_labelShort} thanks to them being natural cannibal.</MessageHealedKuruNaturalCannibal>
+
     <MeatHumanDesc>Raw butchered flesh. Can be cooked into meals or eaten raw, although most humans dislike the idea. May be dangerous.</MeatHumanDesc>
 
     <KuruOptions_baseKuruInfectionChance>Base infection chance: </KuruOptions_baseKuruInfectionChance>
@@ -34,5 +38,13 @@
     
     <KuruOptions_infectFromTraits>Traits</KuruOptions_infectFromTraits>
     <KuruOptions_infectFromTraits_tooltip>Pawns having Cannibal trait, inherent chance </KuruOptions_infectFromTraits_tooltip>
+
+    <KuruOptions_cureSources_label>Possible cures:</KuruOptions_cureSources_label>
+
+    <KuruOptions_luciferiumCures>Luciferium</KuruOptions_luciferiumCures>
+    <KuruOptions_luciferiumCures_tooltip>Luciferium user will eventually be cured of kuru, it might take few days or few years, based on brain damage speed setting. This setting also turns luciferium addicts as a vector for kuru disease off - you can not get kuru by eating luciferium addict. Default: ON.</KuruOptions_luciferiumCures_tooltip>
+
+    <KuruOptions_naturalCannibalCures>Natural Cannibal gene</KuruOptions_naturalCannibalCures>
+    <KuruOptions_naturalCannibalCures_tooltip>Pawn with Natural Cannibal gene will eventually be cured of kuru, it might take few days or few years, based on brain damage speed setting. This setting also turns pawns with natural cannibal gene as a vector for kuru disease off - you can not get kuru by eating pawn with natural cannibal gene. Default: ON.</KuruOptions_naturalCannibalCures_tooltip>
     
 </LanguageData>

@@ -13,6 +13,10 @@ Steam workshop link: <https://steamcommunity.com/sharedfiles/filedetails/?id=363
 
 ![](/Publishing/laughing_fit.png)
 
+![](/Publishing/04_treatment_options.png)
+
+![](/Publishing/05_settings.png)
+
 
 ## License
 

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <GeneDef>
+    <defName>KuruMod_NaturalCannibal</defName>
+    <label>natural cannibal</label>
+    <labelShortAdj>cannibal</labelShortAdj>
+    <description>Carriers of this gene have adapted to prior diseases and eating raw human meat overall. Their immune system can detect and eventually remove prion diseases like Kuru.</description>
+    <iconPath>UI/Icons/Genes/KuruMod_NaturalCannibal</iconPath>
+    <displayOrderInCategory>30</displayOrderInCategory>
+    <foodPoisoningChanceFactor>0.9</foodPoisoningChanceFactor>
+    <displayCategory MayRequire="Ludeon.RimWorld.Biotech">Archite</displayCategory>
+    <customEffectDescriptions>
+      <li>Kuru disease resistance</li>
+    </customEffectDescriptions>
+    <statOffsets>
+      <ImmunityGainSpeed>1.01</ImmunityGainSpeed>
+    </statOffsets>
+    <biostatCpx>1</biostatCpx>
+    <biostatArc>1</biostatArc>
+    <biostatMet>-1</biostatMet>
+    <symbolPack>
+      <prefixSymbols>
+        <li>
+          <symbol>cani</symbol>
+          <symbol>orge</symbol>
+        </li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li>
+          <symbol>anth</symbol>
+          <symbol>orge</symbol>
+        </li>
+      </suffixSymbols>      
+    </symbolPack>
+  </GeneDef>
+
+</Defs>

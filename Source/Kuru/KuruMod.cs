@@ -74,6 +74,8 @@ namespace Kuru
         {
             var listingStandard = new Listing_Standard();
             
+            var gapWidth = 12f;
+            
             listingStandard.Begin(inRect);
             
             listingStandard.CheckboxLabeled(
@@ -110,8 +112,8 @@ namespace Kuru
 
             listingStandard.Label("KuruOptions_infectionSources_label".Translate());
 
-            listingStandard.Indent();
-            listingStandard.ColumnWidth -= 12f;
+            listingStandard.Indent(gapWidth);
+            listingStandard.ColumnWidth -= gapWidth;
 
             listingStandard.CheckboxLabeled(
                 "KuruOptions_infectFromIdeologion".Translate(),
@@ -130,6 +132,26 @@ namespace Kuru
                 ref KuruModSettings.infectFromTraits,
                 "KuruOptions_infectFromTraits_tooltip".Translate() +
                 KuruCause.MeatOfPawnWithCannibalTrait.GetKuruCarrierChance().ToStringPercent());
+            
+            listingStandard.GapLine();
+            
+            listingStandard.Outdent(gapWidth);
+            listingStandard.ColumnWidth += gapWidth;
+            
+            listingStandard.Label("KuruOptions_cureSources_label".Translate());
+
+            listingStandard.Indent(gapWidth);
+            listingStandard.ColumnWidth -= gapWidth;
+
+            listingStandard.CheckboxLabeled(
+                "KuruOptions_luciferiumCures".Translate(),
+                ref KuruModSettings.luciferiumCures,
+                "KuruOptions_luciferiumCures_tooltip".Translate());
+            
+            listingStandard.CheckboxLabeled(
+                "KuruOptions_naturalCannibalCures".Translate(),
+                ref KuruModSettings.naturalCannibalCures,
+                "KuruOptions_naturalCannibalCures_tooltip".Translate());
             
             listingStandard.End();
             
@@ -187,29 +209,4 @@ namespace Kuru
         YEAR
     }
 
-    public class KuruModSettings : ModSettings
-    {
-        public static ProgressionSpeed progressionSpeed = ProgressionSpeed.QUADRUM;
-        public static float baseKuruInfectionChance = 1f;
-        public static bool worldgenPawnsCanBeInfected = true;
-        public static bool butcherSkillMatters = true;
-        
-        public static bool infectFromIdeologion = true;
-        public static bool infectFromRecentIngestion = true;
-        public static bool infectFromTraits = true;
-
-        public override void ExposeData()
-        {
-            Scribe_Values.Look<ProgressionSpeed>(ref progressionSpeed, "progressionSpeed", ProgressionSpeed.QUADRUM);
-            Scribe_Values.Look<float>(ref baseKuruInfectionChance, "baseKuruInfectionChance", 1f);
-            Scribe_Values.Look<bool>(ref worldgenPawnsCanBeInfected, "worldgenPawnsCanBeInfected", true);
-            Scribe_Values.Look<bool>(ref butcherSkillMatters, "butcherSkillMatters", true);
-
-            Scribe_Values.Look<bool>(ref infectFromIdeologion, "infectFromIdeologion", true);
-            Scribe_Values.Look<bool>(ref infectFromRecentIngestion, "infectFromRecentIngestion", true);
-            Scribe_Values.Look<bool>(ref infectFromTraits, "infectFromTraits", true);
-
-            base.ExposeData();
-        }
-    }
 }

@@ -110,6 +110,7 @@
         <Compile Include="MentalState_LaughingFitAll.cs" />
         <Compile Include="Properties\AssemblyInfo.cs"/>
         <Compile Include="CompFoodKuruCarrying.cs" />
+        <Compile Include="KuruModSettings.cs" />
     </ItemGroup>
     <ItemGroup>
       <None Include="App.config" />

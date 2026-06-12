@@ -11,6 +11,7 @@ namespace Kuru
         
         private int lastBrainDamageTick = 0;
         private float nextBrainDamageIn = 1;
+        private bool removalScheduled = false;
 
         private float NextStdNormal()
         {
@@ -18,6 +19,8 @@ namespace Kuru
             var u2 = 1.0-Rand.NextDouble();
             return (float) (Math.Sqrt(-2.0 * Math.Log(u1)) * Math.Sin(2.0 * Math.PI * u2));
         }
+        
+        public override bool ShouldRemove => this.removalScheduled || base.ShouldRemove;
         
         public override void TickInterval(int delta)
         {
@@ -31,6 +34,27 @@ namespace Kuru
 
             if (this.ageTicks > this.lastBrainDamageTick + nextBrainDamageInTicks)
             {
+                if (KuruModSettings.luciferiumCures && pawn.health.hediffSet.GetFirstHediffOfDef(KuruDefOf.LuciferiumAddiction) != null)
+                {
+                    this.removalScheduled = true;
+                    if (PawnUtility.ShouldSendNotificationAbout(pawn))
+                        Messages.Message(
+                            "MessageHealedKuruLuciferium".Translate((NamedArgument)pawn.LabelShort, pawn.Named("PAWN")), 
+                            (LookTargets) (Thing) pawn,
+                            MessageTypeDefOf.NegativeEvent);
+                    return;
+                }
+                if (KuruModSettings.naturalCannibalCures && pawn.genes.HasActiveGene(KuruDefOf.KuruMod_NaturalCannibal))
+                {
+                    this.removalScheduled = true;
+                    if (PawnUtility.ShouldSendNotificationAbout(pawn))
+                        Messages.Message(
+                            "MessageHealedKuruNaturalCannibal".Translate((NamedArgument)pawn.LabelShort, pawn.Named("PAWN")), 
+                            (LookTargets) (Thing) pawn,
+                            MessageTypeDefOf.NegativeEvent);
+                    return;
+                }
+                
                 // random number from normal distribution, we store it instead of final tick count.
                 this.nextBrainDamageIn = NextStdNormal(); 
                 this.lastBrainDamageTick = this.ageTicks;
@@ -51,7 +75,7 @@ namespace Kuru
                     pawn.health.AddHediff(crush);
                     if (PawnUtility.ShouldSendNotificationAbout(pawn))
                         Messages.Message(
-                            "MessageProgressedKuru".Translate((NamedArgument)pawn.LabelShort, pawn.Named("PAWN")), 
+                            "MessageProgressedKuru".Translate((NamedArgument)pawn.LabelShortCap, pawn.Named("PAWN")), 
                             (LookTargets) (Thing) pawn,
                             MessageTypeDefOf.NegativeEvent);
                 }
@@ -65,6 +89,7 @@ namespace Kuru
             base.ExposeData();
             Scribe_Values.Look<int>(ref this.lastBrainDamageTick, "lastBrainDamageTick", 0);
             Scribe_Values.Look<float>(ref this.nextBrainDamageIn, "nextBrainDamageIn", 1);
+            Scribe_Values.Look<bool>(ref this.removalScheduled, "removalScheduled", false);
         }
         
     }
