@@ -2,6 +2,8 @@
 <LanguageData>
 
     <KuruModName>Kuru Mod</KuruModName>
+    
+    <Kuru_StatsReport_HasKuru>infected with kuru</Kuru_StatsReport_HasKuru>
 
     <MessageFoodKuru>{PAWN_labelShort} has started exhibiting symptoms of Kuru after eating: {FOOD_labelShort}.</MessageFoodKuru>
 

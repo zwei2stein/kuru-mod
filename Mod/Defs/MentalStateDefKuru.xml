@@ -51,12 +51,14 @@
 				<li>laughed->giggled</li>
 				<li>laughed->chuckled</li>
 				<li>laughed->cackled</li>
+				<li>laughed->snickered</li>
 				<li>noreason->frivolously</li>
 				<li>noreason->for no reason</li>
 				<li>noreason->randomly</li>
 				<li>noreason->thoughtlessly</li>
 				<li>noreason->nonchalantly</li>
 				<li>noreason->indifferently</li>
+				<li>noreason->mindlessly</li>
 			</rulesStrings>
 		</logRulesInitiator>
 	</InteractionDef>
