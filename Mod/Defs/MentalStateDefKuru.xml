@@ -26,8 +26,8 @@
 		<moodRecoveryThought>Catharsis</moodRecoveryThought>
 		<blockNormalThoughts>true</blockNormalThoughts>
 		<nameColor>(0.98,0.48,0.16)</nameColor>
-		<recoveryMessage>{0} is no longer having laughing fit.</recoveryMessage>
-		<beginLetter>{0} is having laughing fit.\n\n[PAWN_pronoun] will wander around, randomly laughing, unsettling others.</beginLetter>
+		<recoveryMessage>{0} is no longer having a laughing fit.</recoveryMessage>
+		<beginLetter>{0} is having a laughing fit.\n\n[PAWN_pronoun] will wander around, randomly laughing, unsettling others.</beginLetter>
 		<beginLetterDef>NegativeEvent</beginLetterDef>
 		<baseInspectLine>Mental state: Laughing fit</baseInspectLine>
 		<allowBeatfire>true</allowBeatfire>
@@ -77,5 +77,5 @@
 			</li>
 		</stages>
 	</ThoughtDef>
-	
+
 </Defs>

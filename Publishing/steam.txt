@@ -1,61 +1,59 @@
-[h1]Kuru mod[/h1]
+[h1]Kuru Mod[/h1]
 
-So, you are eating human meat. Well, that is not without risk, not funny.
+So, you are eating human meat. Well, that's not without risk—and not funny.
 
-[h2]Features[/h2] 
+[h2]Features[/h2]
 
 [list]
-    [*]New mental break, "Laughing fit"
-    [*]Kuru disease, a nigh-untreatable infection that spreads through eating human meat
-    [*]Raiders from cannibalim-positive cultures can come already suffering kuru infection.
-    [*]Natural cannibal gene, an archite gene providing resistance to kuru (and minor other benefits to make it less awfull if you are not full cannibal).
+    [*]New mental break, "Laughing Fit"
+    [*]Kuru disease, a nigh-untreatable infection that spreads through eating human meat.
+    [*]Raiders from cannibalism-positive cultures can come already suffering Kuru infection.
+    [*]Natural cannibal gene, an archite gene providing resistance to Kuru (and minor other benefits to make it less awful if you are not a full cannibal).
 [/list]
 
 [hr][/hr]
 
-[h2]Kuru, the laughing sickness[/h2] 
+[h2]Kuru, the Laughing Sickness[/h2]
 
-Kuru causes mood instability, giving pawns chance of various mental breaks, inluding severe Laughing fits.
+Kuru causes mood instability, giving pawns a chance of various mental breaks, including severe Laughing Fits.
 
 It also debilitates pawns, making ordinary tasks a bit more difficult.
 
-But most importantly, it literally eats the brain. It does cause brain damage over time, both causing pain and consciousness loss.
+But most importantly, it literally eats the brain. It causes brain damage over time, causing both pain and loss of consciousness. Eventually, it kills pawns because their brain is just not there anymore.
 
-Eventually, killing pawn because their brain is just not there anymore.
+[h3]Spread Vectors[/h3]
 
-[h3]Spead vectors[/h3] 
+Of course, if [spoiler]you eat actual, known, Kuru carrier, you will be[/spoiler] infected.
 
-Of course, if [spoiler]you eat actual, known, kuru carrier, you will be[/spoiler] infected.
+But [spoiler]meat from any human who partakes in cannibalism or has an ideologion that permits eating humans[/spoiler] is not out of the question: Kuru is endemic to cultures practicing cannibalism.
 
-But [spoiler]meat of any human that partakes in cannibalism - has ideologion that permits eating humans[/spoiler] is not out of question: kuru is endemic to cultures practicing cannibalism.
+Some pawns will tell you [spoiler]they only have cravings and would like a taste, but did they already? A pawn with the Cannibal trait or has ever eaten human meat can rarely be a vector.[/spoiler] One might not want to risk that.
 
-Some pawns will tell you [spoiler]they only have cravings and would like a taste, but did they already? Pawn that Cannibal trait or hasever eaten human meat can be rarely vector.[/spoiler] One might not want to risk that.
+Kuru is a prion infection, so [spoiler]cooking meat will not prevent transmission[/spoiler]. Be careful about [spoiler]human meat kibble[/spoiler].
 
-Kuru is prion infection, so [spoiler]cooking meat will not prevent transmition[/spoiler]. Be carefull about [spoiler]that human meat kibble[/spoiler].
+Prion diseases are known to skip [spoiler]species[/spoiler]. Do not feed long[spoiler]pigs[/spoiler] to short [spoiler]pigs[/spoiler].
 
-Prion diseases are know to skip [spoiler]species[/spoiler]. Do not feed short[spoiler]pigs[/spoiler] with long[spoiler]pigs[/spoiler].
-
-[h3]Treatment options[/h3]
+[h3]Treatment Options[/h3]
 
 If you can [spoiler]be on top of brain damage[/spoiler], your pawn can lead a long, productive life full of laughter.
 
 Use [spoiler]any method that can heal permanent scars[/spoiler].
 
-You can also just [spoiler]destroy brain completely and revive[/spoiler] pawn.
+You can also just [spoiler]destroy the brain completely and revive the pawn[/spoiler].
 
-To quote: [i]Anytime I had a problem and I [spoiler]took luciferium[/spoiler]..Boom! Right away, I had a different problem.
-[/i] [spoiler]Luciferium will remove kuru, eventually.[/spoiler] Decide for yourself what is more manageable condition.
+To quote: [i]Any time I had a problem and I [spoiler]took luciferium[/spoiler]. Boom! Right away, I had a different problem.[/i]
+[spoiler]Luciferium will remove Kuru, eventually.[/spoiler] Decide for yourself which condition is more manageable.
 
 Natural cannibal gene does provide resistance, if you can find it.
 
 [hr][/hr]
 
-[url=https://github.com/zwei2stein/kuru-mod/] source code [/url] 
+[url=https://github.com/zwei2stein/kuru-mod/]Source Code[/url]
 
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=3651274426] my other mods [/url] 
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=3651274426]My Other Mods[/url]
 
 [hr][/hr]
 
 [h2]Thanks[/h2]
 
-A lot of thanks to rimworld modding discord for help.
+Many thanks to the RimWorld Modding Discord for their help.

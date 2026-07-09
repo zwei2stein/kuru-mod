@@ -4,8 +4,8 @@
     <HediffDef ParentName="InjuryBase">
         <defName>KuruMod_BrainDamage</defName>
         <label>brain damage</label>
-        <labelNoun>a brain damage</labelNoun>
-        <description>A brain damage.</description>
+        <labelNoun>brain damage</labelNoun>
+        <description>Brain damage.</description>
         <comps>
             <li Class="HediffCompProperties_GetsPermanent">
                 <permanentLabel>brain damage scar</permanentLabel>
@@ -22,7 +22,7 @@
     <HediffDef>
         <defName>KuruMod_Kuru</defName>
         <label>kuru</label>
-        <description>Neural degradation caused by eating meat contaminated with misfolded prions. It is known as a laughing sickness.</description>
+        <description>Neural degradation caused by eating meat contaminated with misfolded prions. It is known as the laughing sickness.</description>
         <hediffClass>Kuru.HediffKuru</hediffClass>
         <defaultLabelColor>(1,1,0.5)</defaultLabelColor>
         <tendable>false</tendable>
@@ -72,5 +72,5 @@
             </li>
         </stages>
     </HediffDef>
-    
+
 </Defs>
