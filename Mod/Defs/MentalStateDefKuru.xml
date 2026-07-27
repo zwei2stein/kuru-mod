@@ -63,21 +63,4 @@
 		</logRulesInitiator>
 	</InteractionDef>
 
-	<ThoughtDef>
-		<defName>KuruMod_WasLaughedAt</defName>
-		<durationDays>1</durationDays>
-		<stackLimit>10</stackLimit>
-		<developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
-		<nullifyingHediffs>
-			<li>Inhumanized</li>
-		</nullifyingHediffs>
-		<stages>
-			<li>
-				<label>mocked</label>
-				<description>A laughing fit made me very creeped out. Why me? What did I do?</description>
-				<baseMoodEffect>-6</baseMoodEffect>
-			</li>
-		</stages>
-	</ThoughtDef>
-
 </Defs>

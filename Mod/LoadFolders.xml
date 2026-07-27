@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<loadFolders>
+    <v1.6>
+        <li>/</li>
+        <li>1.6</li>
+        <li IfModActive="phil42.allergies">1.6/Compatibility/phil42allergies</li>
+        <li IfModActive="ferny.characterdevelopment">1.6/Compatibility/fernycharacterdevelopment</li>
+    </v1.6>
+</loadFolders>

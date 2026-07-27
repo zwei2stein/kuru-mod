@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <WantsAndQuirks.WantDef>
+        <defName>KuruMod_BeCured</defName>
+        <label>cure kuru</label>
+        <description>I'd like to be cured of kuru.</description>
+        <iconPath>UI/WantIcons/Medical</iconPath>
+        <reward>3000</reward>
+        <commonality>1</commonality>
+        <workerClass>WantsAndQuirks.WantWorker_CureHediff</workerClass>
+        <targetHediff>KuruMod_Kuru</targetHediff>
+        <minimumTechLevel>Neolithic</minimumTechLevel>
+    </WantsAndQuirks.WantDef>
+
+    <WantsAndQuirks.WantDef>
+        <defName>KuruMod_BrainDamageCured</defName>
+        <label>cure kuru brain damage</label>
+        <description>I'd like main brain to work well again.</description>
+        <iconPath>UI/WantIcons/Medical</iconPath>
+        <reward>2000</reward>
+        <commonality>1</commonality>
+        <workerClass>WantsAndQuirks.WantWorker_CureHediff</workerClass>
+        <targetHediff>KuruMod_BrainDamage</targetHediff>
+        <minimumTechLevel>Medieval</minimumTechLevel>
+    </WantsAndQuirks.WantDef>
+    
+</Defs>

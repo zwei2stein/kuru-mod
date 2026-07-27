@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThoughtDef>
+        <defName>KuruMod_WasLaughedAt</defName>
+        <durationDays>1</durationDays>
+        <stackLimit>10</stackLimit>
+        <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+        <nullifyingHediffs>
+            <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+        </nullifyingHediffs>
+        <stages>
+            <li>
+                <label>mocked</label>
+                <description>A laughing fit made me very creeped out. Why me? What did I do?</description>
+                <baseMoodEffect>-6</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <ThoughtDef>
+        <defName>KuruMod_ContractedKuru</defName>
+        <icon>Things/Mote/ThoughtSymbol/Skull</icon>
+        <durationDays>10</durationDays>
+        <stages>
+            <li>
+                <label>contracted kuru</label>
+                <description>I have discovered that I am suffering from Kuru. My inhuman deeds caught up with me. My future is bleak.</description>
+                <baseMoodEffect>-20</baseMoodEffect>
+            </li>
+        </stages>
+        <nullifyingHediffs>
+            <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+        </nullifyingHediffs>
+    </ThoughtDef>
+
+    <ThoughtDef>
+        <defName>KuruMod_KuruAttack</defName>
+        <icon>Things/Mote/ThoughtSymbol/Skull</icon>
+        <durationDays>10</durationDays>
+        <nullifyingHediffs>
+            <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+        </nullifyingHediffs>
+        <stages>
+            <li>
+                <label>suffered kuru attack</label>
+                <description>I lost a bit of myself to kuru again. My brain just no longer works the same anymore. I am reminded of how little I have left.</description>
+                <baseMoodEffect>-5</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <ThoughtDef>
+        <defName>KuruMod_KuruCured</defName>
+        <durationDays>10</durationDays>
+        <nullifyingHediffs>
+            <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+        </nullifyingHediffs>
+        <stages>
+            <li>
+                <label>kuru cured</label>
+                <description>Miracle has happened, I am no longer facing certain death from Kuru. I am free. I have future again!</description>
+                <baseMoodEffect>20</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+</Defs>

@@ -47,6 +47,7 @@ namespace Kuru
             if (pawn.health.hediffSet.GetFirstHediffOfDef(KuruDefOf.KuruMod_Kuru) == null)
             {
                 pawn.health.AddHediff(HediffMaker.MakeHediff(KuruDefOf.KuruMod_Kuru, pawn, pawn.health.hediffSet.GetBrain()));
+                pawn.needs.mood.thoughts.memories.TryGainMemory(KuruDefOf.KuruMod_ContractedKuru);
             }
 
             if (ingestible == null) return; //pawn was just generated

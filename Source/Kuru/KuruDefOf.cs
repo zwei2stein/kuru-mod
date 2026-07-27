@@ -20,6 +20,10 @@ namespace Kuru
 
         public static InteractionDef KuruMod_DisturbingLaugh;
 
+        public static ThoughtDef KuruMod_ContractedKuru;
+        public static ThoughtDef KuruMod_KuruAttack;
+        public static ThoughtDef KuruMod_KuruCured;
+
         static KuruDefOf() => DefOfHelper.EnsureInitializedInCtor(typeof(KuruDefOf));
     }
 }

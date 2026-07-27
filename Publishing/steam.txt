@@ -48,6 +48,17 @@ Natural cannibal gene does provide resistance, if you can find it.
 
 [hr][/hr]
 
+[h2]Mod compatibility[/h2]
+
+[h3]Compatible with traits from[/h3]
+
+[list]
+    [*]Allergies - extra gene effect.
+    [*]Character Development - wants related to being infected with Kuru
+[/list]
+
+[hr][/hr]
+
 [url=https://github.com/zwei2stein/kuru-mod/]Source Code[/url]
 
 [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3651274426]My Other Mods[/url]

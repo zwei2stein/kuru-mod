@@ -41,7 +41,8 @@ namespace Kuru
                         Messages.Message(
                             "MessageHealedKuruLuciferium".Translate((NamedArgument)pawn.LabelShort, pawn.Named("PAWN")), 
                             (LookTargets) (Thing) pawn,
-                            MessageTypeDefOf.NegativeEvent);
+                            MessageTypeDefOf.PositiveEvent);
+                    pawn.needs.mood.thoughts.memories.TryGainMemory(KuruDefOf.KuruMod_KuruCured);
                     return;
                 }
                 if (KuruModSettings.naturalCannibalCures && pawn.genes.HasActiveGene(KuruDefOf.KuruMod_NaturalCannibal))
@@ -51,7 +52,8 @@ namespace Kuru
                         Messages.Message(
                             "MessageHealedKuruNaturalCannibal".Translate((NamedArgument)pawn.LabelShort, pawn.Named("PAWN")), 
                             (LookTargets) (Thing) pawn,
-                            MessageTypeDefOf.NegativeEvent);
+                            MessageTypeDefOf.PositiveEvent);
+                    pawn.needs.mood.thoughts.memories.TryGainMemory(KuruDefOf.KuruMod_KuruCured);
                     return;
                 }
                 
@@ -78,6 +80,7 @@ namespace Kuru
                             "MessageProgressedKuru".Translate((NamedArgument)pawn.LabelShortCap, pawn.Named("PAWN")), 
                             (LookTargets) (Thing) pawn,
                             MessageTypeDefOf.NegativeEvent);
+                    pawn.needs.mood.thoughts.memories.TryGainMemory(KuruDefOf.KuruMod_KuruAttack);
                 }
 
             }
