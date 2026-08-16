@@ -4,7 +4,7 @@
     <WantsAndQuirks.WantDef>
         <defName>KuruMod_BeCured</defName>
         <label>cure kuru</label>
-        <description>I'd like to be cured of kuru.</description>
+        <description>I'd like to be cured of Kuru.</description>
         <iconPath>UI/WantIcons/Medical</iconPath>
         <reward>3000</reward>
         <commonality>1</commonality>
@@ -16,7 +16,7 @@
     <WantsAndQuirks.WantDef>
         <defName>KuruMod_BrainDamageCured</defName>
         <label>cure kuru brain damage</label>
-        <description>I'd like main brain to work well again.</description>
+        <description>I'd like my brain to work properly again.</description>
         <iconPath>UI/WantIcons/Medical</iconPath>
         <reward>2000</reward>
         <commonality>1</commonality>
@@ -24,5 +24,5 @@
         <targetHediff>KuruMod_BrainDamage</targetHediff>
         <minimumTechLevel>Medieval</minimumTechLevel>
     </WantsAndQuirks.WantDef>
-    
+
 </Defs>

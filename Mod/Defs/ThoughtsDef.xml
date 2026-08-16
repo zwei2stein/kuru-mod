@@ -44,7 +44,7 @@
         <stages>
             <li>
                 <label>suffered kuru attack</label>
-                <description>I lost a bit of myself to kuru again. My brain just no longer works the same anymore. I am reminded of how little I have left.</description>
+                <description>I lost a bit of myself to Kuru again. My brain just no longer works the same anymore. I am reminded of how little I have left.</description>
                 <baseMoodEffect>-5</baseMoodEffect>
             </li>
         </stages>
@@ -59,7 +59,7 @@
         <stages>
             <li>
                 <label>kuru cured</label>
-                <description>Miracle has happened, I am no longer facing certain death from Kuru. I am free. I have future again!</description>
+                <description>A miracle has happened! I am no longer facing certain death from Kuru. I am free. I have a future again!</description>
                 <baseMoodEffect>20</baseMoodEffect>
             </li>
         </stages>

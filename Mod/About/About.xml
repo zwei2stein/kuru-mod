@@ -14,7 +14,7 @@
             <steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
         </li>
     </modDependencies>
-    <description>Kuru disease mod.</description>
+    <description>Kuru Mod adds a prion disease, kuru. Contracted from cannibalism. Causing laughing fits, brain damage, and death.</description>
     <loadBefore>
         <li>ferny.characterdevelopment</li>
     </loadBefore>

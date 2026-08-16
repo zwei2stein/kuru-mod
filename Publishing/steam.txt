@@ -1,15 +1,17 @@
 [h1]Kuru Mod[/h1]
 
-So, you are eating human meat. Well, that's not without risk—and not funny.
+So, you are eating human meat. Well, that's not without risk, and not funny.
 
 [h2]Features[/h2]
 
 [list]
-    [*]New mental break, "Laughing Fit"
+    [*]New mental break: "Laughing Fit"
     [*]Kuru disease, a nigh-untreatable infection that spreads through eating human meat.
-    [*]Raiders from cannibalism-positive cultures can come already suffering Kuru infection.
-    [*]Natural cannibal gene, an archite gene providing resistance to Kuru (and minor other benefits to make it less awful if you are not a full cannibal).
+    [*]Raiders from cannibalism-positive cultures may arrive already suffering Kuru infection.
+    [*]Natural cannibal gene: an archite gene providing resistance to Kuru (and minor other benefits to make it less awful if you are not a full cannibal).
 [/list]
+
+[img=https://i.imgur.com/SKbEEPF.png]
 
 [hr][/hr]
 
@@ -23,7 +25,7 @@ But most importantly, it literally eats the brain. It causes brain damage over t
 
 [h3]Spread Vectors[/h3]
 
-Of course, if [spoiler]you eat actual, known, Kuru carrier, you will be[/spoiler] infected.
+Of course, if [spoiler]you eat an actual, known, Kuru carrier, you will be[/spoiler] infected.
 
 But [spoiler]meat from any human who partakes in cannibalism or has an ideologion that permits eating humans[/spoiler] is not out of the question: Kuru is endemic to cultures practicing cannibalism.
 
@@ -38,23 +40,24 @@ Prion diseases are known to skip [spoiler]species[/spoiler]. Do not feed long[sp
 If you can [spoiler]be on top of brain damage[/spoiler], your pawn can lead a long, productive life full of laughter.
 
 Use [spoiler]any method that can heal permanent scars[/spoiler].
-
 You can also just [spoiler]destroy the brain completely and revive the pawn[/spoiler].
 
 To quote: [i]Any time I had a problem and I [spoiler]took luciferium[/spoiler]. Boom! Right away, I had a different problem.[/i]
 [spoiler]Luciferium will remove Kuru, eventually.[/spoiler] Decide for yourself which condition is more manageable.
 
-Natural cannibal gene does provide resistance, if you can find it.
+The natural cannibal gene does provide resistance, if you can find it.
+
+[img=https://i.imgur.com/wzpRIGY.png]
 
 [hr][/hr]
 
 [h2]Mod compatibility[/h2]
 
-[h3]Compatible with traits from[/h3]
+[h3]Compatible with features from[/h3]
 
 [list]
-    [*]Allergies - extra gene effect.
-    [*]Character Development - wants related to being infected with Kuru
+    [*]Allergies: extra gene effect.
+    [*]Character Development: wants related to being infected with Kuru
 [/list]
 
 [hr][/hr]

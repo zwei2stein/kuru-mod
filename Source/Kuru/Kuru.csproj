@@ -118,12 +118,9 @@
       <None Include="packages.config" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
-    <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-         Other similar extension points exist, see Microsoft.Common.targets.
-    <Target Name="BeforeBuild">
-    </Target>
     <Target Name="AfterBuild">
+        <Copy SourceFiles="$(TargetPath)" DestinationFolder="C:\pri\Proton\My files\Code\rimworld_mods\\Kuru\Mod\1.6\Assemblies"/>
+        <Copy SourceFiles="$(TargetDir)$(TargetName).pdb" DestinationFolder="C:\pri\Proton\My files\Code\rimworld_mods\\Kuru\Mod\1.6\Assemblies" Condition="Exists('$(TargetDir)$(TargetName).pdb')"/>
     </Target>
-    -->
 
 </Project>
