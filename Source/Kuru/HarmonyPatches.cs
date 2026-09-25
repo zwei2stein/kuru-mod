@@ -22,7 +22,7 @@ namespace Kuru
         }
     }
 
-    [HarmonyPatch(typeof(Corpse), nameof(Corpse.ButcherProducts))] // if possible use nameof() here
+    [HarmonyPatch(typeof(Corpse), nameof(Corpse.ButcherProducts))]
     public class ButcherPatch
     {
         static void Postfix(ref IEnumerable<Thing> __result, ref Corpse __instance, Pawn butcher)
@@ -33,9 +33,9 @@ namespace Kuru
 
             if (compCorpseKuruCarrying == null) return;
 
-
-            if (KuruModSettings.butcherSkillMatters && butcher.skills != null)
+            if (KuruModSettings.butcherSkillMatters && butcher?.skills != null)
             {
+                // 0 - 20 -> 20 skill gives 50% chance of avoiding infections
                 var butcherSkill = 0.5f * butcher.skills.AverageOfRelevantSkillsFor(KuruDefOf.Cooking) / 20;
 
                 if (Rand.Chance(butcherSkill))
@@ -44,12 +44,20 @@ namespace Kuru
                     return;
                 }
             }
+            
+            __result = ApplyCause(__result, compCorpseKuruCarrying.cause);
+        }
 
-            foreach (var thing in __result)
+        private static IEnumerable<Thing> ApplyCause(IEnumerable<Thing> things, KuruCause cause)
+        {
+            foreach (var thing in things)
             {
-                if (!thing.TryGetComp(out CompFoodKuruCarrying compFoodKuruCarrying)) continue;
-                //Log.Message("[KuruMod] butcher result - applying " + compCorpseKuruCarrying.Props.Cause);
-                compFoodKuruCarrying.Props.Cause = compCorpseKuruCarrying.Props.Cause;
+                if (thing.TryGetComp(out CompFoodKuruCarrying compFoodKuruCarrying))
+                {
+                    //Log.Message("[KuruMod] butcher result - applying " + cause);
+                    compFoodKuruCarrying.cause = cause;
+                }
+                yield return thing;
             }
         }
     }
@@ -81,10 +89,9 @@ namespace Kuru
                 var comp = ingredient.TryGetComp<CompFoodKuruCarrying>();
                 if (comp == null) continue;
 
-                if (comp.Props.Cause.GetKuruCarrierChance() >
-                    bestCause.GetKuruCarrierChance())
+                if (comp.cause.GetKuruCarrierChance() > bestCause.GetKuruCarrierChance())
                 {
-                    bestCause = comp.Props.Cause;
+                    bestCause = comp.cause;
                 }
             }
 
@@ -92,12 +99,19 @@ namespace Kuru
 
             //Log.Message("[KuruMod] propagating kuru causes from ingredients to result, best cause: " + bestCause);
 
-            foreach (var result in __result)
+            __result = ApplyCause(__result, bestCause);
+        }
+
+        private static IEnumerable<Thing> ApplyCause(IEnumerable<Thing> results, KuruCause cause)
+        {
+            foreach (var result in results)
             {
-                var compFoodKuruCarrying = result.TryGetComp<CompFoodKuruCarrying>();
-                if (compFoodKuruCarrying == null) continue;
-                //Log.Message("[KuruMod] propagating recipe, setting cause: " + bestCause);
-                compFoodKuruCarrying.Props.Cause = bestCause;
+                if (result.TryGetComp(out CompFoodKuruCarrying compFoodKuruCarrying))
+                {
+                    //Log.Message("[KuruMod] propagating recipe, setting cause: " + cause);
+                    compFoodKuruCarrying.cause = cause;
+                }
+                yield return result;
             }
         }
     }

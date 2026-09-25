@@ -12,20 +12,24 @@ namespace Kuru
         static KuruModStatic()
         {
             //Log.Message("[KuruMod] loading!");
+            
+            var patchedCorpseDefs = new HashSet<ThingDef>();
+            var patchedMeatDefs = new HashSet<ThingDef>();
 
-            //These defs are generated runtime, we much patch them in code.
-            foreach (var def in DefDatabase<ThingDef>.AllDefs)
+            foreach (var raceDef in DefDatabase<ThingDef>.AllDefs)
             {
-                switch (def.defName)
+                if (raceDef.race == null || !raceDef.race.Humanlike) continue;
+
+                var corpseDef = raceDef.race.corpseDef;
+                if (corpseDef != null && patchedCorpseDefs.Add(corpseDef))
                 {
-                    case "Corpse_Human":
-                        //Log.Message("[KuruMod] Patching " + def.defName);
-                        def.comps.Add(new CompCorpseKuruCarryingProperties());
-                        break;
-                    case "Meat_Human":
-                        //Log.Message("[KuruMod] Patching " + def.defName);
-                        def.comps.Add(new CompFoodKuruCarryingProperties());
-                        break;
+                    corpseDef.comps.Add(new CompCorpseKuruCarryingProperties());
+                }
+
+                var meatDef = raceDef.race.meatDef;
+                if (meatDef != null && patchedMeatDefs.Add(meatDef))
+                {
+                    meatDef.comps.Add(new CompFoodKuruCarryingProperties { defaultCause = KuruCause.Unknown });
                 }
             }
 

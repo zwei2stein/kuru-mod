@@ -63,8 +63,7 @@ namespace Kuru
 
         private float GetCandidateWeight(Pawn candidate)
         {
-            return (float)(1.0 - (double)Mathf.Min(this.pawn.Position.DistanceTo(candidate.Position) / 40f, 1f) +
-                           0.009999999776482582);
+            return (float)(1.0 - (double)Mathf.Min(this.pawn.Position.DistanceTo(candidate.Position) / 40f, 1f) + 0.01f);
         }
 
         public override void ExposeData()

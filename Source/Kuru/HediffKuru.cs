@@ -38,7 +38,7 @@ namespace Kuru
                     this.removalScheduled = true;
                     if (PawnUtility.ShouldSendNotificationAbout(pawn))
                         Messages.Message(
-                            "MessageHealedKuruLuciferium".Translate((NamedArgument)pawn.LabelShort, pawn.Named("PAWN")), 
+                            "MessageHealedKuruLuciferium".Translate(pawn.Named("PAWN")), 
                             (LookTargets) (Thing) pawn,
                             MessageTypeDefOf.PositiveEvent);
                     if (pawn.RaceProps.Humanlike)
@@ -50,7 +50,7 @@ namespace Kuru
                     this.removalScheduled = true;
                     if (PawnUtility.ShouldSendNotificationAbout(pawn))
                         Messages.Message(
-                            "MessageHealedKuruNaturalCannibal".Translate((NamedArgument)pawn.LabelShort, pawn.Named("PAWN")), 
+                            "MessageHealedKuruNaturalCannibal".Translate(pawn.Named("PAWN")), 
                             (LookTargets) (Thing) pawn,
                             MessageTypeDefOf.PositiveEvent);
                     if (pawn.RaceProps.Humanlike)

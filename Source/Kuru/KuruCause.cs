@@ -41,7 +41,7 @@ namespace Kuru
                 return KuruCause.MeatOfPawnWithCannibalIdeology;
             }
 
-            if (KuruModSettings.infectFromRecentIngestion && pawn.mindState.lastHumanMeatIngestedTick != -99999)
+            if (KuruModSettings.infectFromRecentIngestion && Find.TickManager.TicksGame - pawn.mindState.lastHumanMeatIngestedTick < ProgressionSpeed.YEAR.ToTicks())
             {
                 return KuruCause.MeatOfPawnWhoIngestedHumanMeatRecently;
             }

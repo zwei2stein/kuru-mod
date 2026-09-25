@@ -1,4 +1,3 @@
-using RimWorld;
 using Verse;
 using System;
 
@@ -6,7 +5,7 @@ namespace Kuru
 {
     public class CompCorpseKuruCarrying : ThingComp
     {
-        public CompCorpseKuruCarryingProperties Props => (CompCorpseKuruCarryingProperties)this.props;
+        public KuruCause cause = KuruCause.None;
 
         public void InitializeCorpse()
         {
@@ -14,22 +13,26 @@ namespace Kuru
 
             var corpsePawn = ((Corpse)this.parent).InnerPawn;
 
-            this.Props.Cause = KuruCauseUtils.CauseFromPawn(corpsePawn);
+            this.cause = KuruCauseUtils.CauseFromPawn(corpsePawn);
 
-            //Log.Message("[KuruMod] Kuru lottery result: " + this.Props.Cause);
+            //Log.Message("[KuruMod] Kuru lottery result: " + this.cause);
         }
 
         public override void PostIngested(Pawn ingester)
         {
-            //Log.Message("[KuruMod] eaten CompCorpseKuruCarrying " + this.Props.Cause);
-            KuruModStatic.AddFoodKuruHediffByCause(ingester, this.parent, this.Props.Cause);
+            //Log.Message("[KuruMod] eaten CompCorpseKuruCarrying " + this.cause);
+            KuruModStatic.AddFoodKuruHediffByCause(ingester, this.parent, this.cause);
+        }
+
+        public override void PostExposeData()
+        {
+            base.PostExposeData();
+            Scribe_Values.Look(ref this.cause, "kuruCause", KuruCause.None);
         }
     }
 
     public class CompCorpseKuruCarryingProperties : CompProperties
     {
-        public KuruCause Cause { get; set; } = KuruCause.None;
-
         public CompCorpseKuruCarryingProperties()
         {
             this.compClass = typeof(CompCorpseKuruCarrying);

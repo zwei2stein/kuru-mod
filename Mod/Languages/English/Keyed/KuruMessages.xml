@@ -13,7 +13,7 @@
 
     <MessageHealedKuruNaturalCannibal>Kuru infection disappeared from {PAWN_labelShort} thanks to them being a natural cannibal.</MessageHealedKuruNaturalCannibal>
 
-    <KuruOptions_baseKuruInfectionChance>Base infection chance: {CHANCE} </KuruOptions_baseKuruInfectionChance>
+    <KuruOptions_baseKuruInfectionChance>Base infection chance: {CHANCE}.</KuruOptions_baseKuruInfectionChance>
     <KuruOptions_baseKuruInfectionChance_tooltip>Different sources have different chances of spreading infection (eating Kuru-infected human has a very high chance, eating random human has a very, very low chance). This is a global setting that affects all of them.</KuruOptions_baseKuruInfectionChance_tooltip>
 
     <KuruOptions_worldgenPawnsCanBeInfected>Pawns can be pre-infected</KuruOptions_worldgenPawnsCanBeInfected>
