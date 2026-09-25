@@ -12,13 +12,6 @@ namespace Kuru
         private int lastBrainDamageTick = 0;
         private float nextBrainDamageIn = 1;
         private bool removalScheduled = false;
-
-        private float NextStdNormal()
-        {
-            var u1 = 1.0-Rand.NextDouble(); 
-            var u2 = 1.0-Rand.NextDouble();
-            return (float) (Math.Sqrt(-2.0 * Math.Log(u1)) * Math.Sin(2.0 * Math.PI * u2));
-        }
         
         public override bool ShouldRemove => this.removalScheduled || base.ShouldRemove;
         
@@ -34,6 +27,12 @@ namespace Kuru
 
             if (this.ageTicks > this.lastBrainDamageTick + nextBrainDamageInTicks)
             {
+                if (pawn.health.hediffSet.GetBrain() == null)
+                {
+                    //Kuru makes no sense without brain.
+                    this.removalScheduled = true;
+                    return;
+                }
                 if (KuruModSettings.luciferiumCures && pawn.health.hediffSet.GetFirstHediffOfDef(KuruDefOf.LuciferiumAddiction) != null)
                 {
                     this.removalScheduled = true;
@@ -42,10 +41,11 @@ namespace Kuru
                             "MessageHealedKuruLuciferium".Translate((NamedArgument)pawn.LabelShort, pawn.Named("PAWN")), 
                             (LookTargets) (Thing) pawn,
                             MessageTypeDefOf.PositiveEvent);
-                    pawn.needs.mood.thoughts.memories.TryGainMemory(KuruDefOf.KuruMod_KuruCured);
+                    if (pawn.RaceProps.Humanlike)
+                        pawn.needs.mood.thoughts.memories.TryGainMemory(KuruDefOf.KuruMod_KuruCured);
                     return;
                 }
-                if (KuruModSettings.naturalCannibalCures && pawn.genes.HasActiveGene(KuruDefOf.KuruMod_NaturalCannibal))
+                if (KuruModSettings.naturalCannibalCures && ModsConfig.BiotechActive && pawn.genes.HasActiveGene(KuruDefOf.KuruMod_NaturalCannibal))
                 {
                     this.removalScheduled = true;
                     if (PawnUtility.ShouldSendNotificationAbout(pawn))
@@ -53,12 +53,13 @@ namespace Kuru
                             "MessageHealedKuruNaturalCannibal".Translate((NamedArgument)pawn.LabelShort, pawn.Named("PAWN")), 
                             (LookTargets) (Thing) pawn,
                             MessageTypeDefOf.PositiveEvent);
-                    pawn.needs.mood.thoughts.memories.TryGainMemory(KuruDefOf.KuruMod_KuruCured);
+                    if (pawn.RaceProps.Humanlike)
+                        pawn.needs.mood.thoughts.memories.TryGainMemory(KuruDefOf.KuruMod_KuruCured);
                     return;
                 }
                 
                 // random number from normal distribution, we store it instead of final tick count.
-                this.nextBrainDamageIn = NextStdNormal(); 
+                this.nextBrainDamageIn = Verse.Rand.Gaussian(0f, 1f);
                 this.lastBrainDamageTick = this.ageTicks;
                 
                 var crush = HediffMaker.MakeHediff(KuruDefOf.KuruMod_BrainDamage, pawn, pawn.health.hediffSet.GetBrain());
@@ -80,7 +81,8 @@ namespace Kuru
                             "MessageProgressedKuru".Translate((NamedArgument)pawn.LabelShortCap, pawn.Named("PAWN")), 
                             (LookTargets) (Thing) pawn,
                             MessageTypeDefOf.NegativeEvent);
-                    pawn.needs.mood.thoughts.memories.TryGainMemory(KuruDefOf.KuruMod_KuruAttack);
+                    if (pawn.RaceProps.Humanlike)
+                        pawn.needs.mood.thoughts.memories.TryGainMemory(KuruDefOf.KuruMod_KuruAttack);
                 }
 
             }

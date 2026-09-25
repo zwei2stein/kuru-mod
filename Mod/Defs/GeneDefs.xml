@@ -14,7 +14,7 @@
       <li>Resistance to Kuru disease</li>
     </customEffectDescriptions>
     <statOffsets>
-      <ImmunityGainSpeed>1.1</ImmunityGainSpeed>
+      <ImmunityGainSpeed>0.25</ImmunityGainSpeed>
     </statOffsets>
     <conditionalStatAffecters>
       <li Class="Kuru.ConditionalStatAffecter_HasKuru">

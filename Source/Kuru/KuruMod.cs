@@ -46,19 +46,22 @@ namespace Kuru
 
             if (pawn.health.hediffSet.GetFirstHediffOfDef(KuruDefOf.KuruMod_Kuru) == null)
             {
-                pawn.health.AddHediff(HediffMaker.MakeHediff(KuruDefOf.KuruMod_Kuru, pawn, pawn.health.hediffSet.GetBrain()));
-                pawn.needs.mood.thoughts.memories.TryGainMemory(KuruDefOf.KuruMod_ContractedKuru);
+                pawn.health.AddHediff(HediffMaker.MakeHediff(KuruDefOf.KuruMod_Kuru, pawn,
+                    pawn.health.hediffSet.GetBrain()));
+                if (pawn.RaceProps.Humanlike)
+                    pawn.needs.mood.thoughts.memories.TryGainMemory(KuruDefOf.KuruMod_ContractedKuru);
+                
+                if (ingestible == null) return; //pawn was just generated
+
+                if (!PawnUtility.ShouldSendNotificationAbout(pawn) ||
+                    !MessagesRepeatAvoider.MessageShowAllowed("MessageFoodKuru-" + pawn.thingIDNumber.ToString(), 0.1f))
+                    return;
+                Messages.Message(
+                    "MessageFoodKuru".Translate((NamedArgument)pawn.LabelShort,
+                            (NamedArgument)ingestible.LabelCapNoCount, pawn.Named("PAWN"), ingestible.Named("FOOD"))
+                        .CapitalizeFirst(), (LookTargets)(Thing)pawn, MessageTypeDefOf.NegativeEvent);
+
             }
-
-            if (ingestible == null) return; //pawn was just generated
-
-            if (!PawnUtility.ShouldSendNotificationAbout(pawn) ||
-                !MessagesRepeatAvoider.MessageShowAllowed("MessageFoodKuru-" + pawn.thingIDNumber.ToString(), 0.1f))
-                return;
-            Messages.Message(
-                "MessageFoodKuru".Translate((NamedArgument)pawn.LabelShort,
-                        (NamedArgument)ingestible.LabelCapNoCount, pawn.Named("PAWN"), ingestible.Named("FOOD"))
-                    .CapitalizeFirst(), (LookTargets) (Thing) pawn, MessageTypeDefOf.NegativeEvent);
         }
     }
 
@@ -85,9 +88,8 @@ namespace Kuru
                 "KuruOptions_worldgenPawnsCanBeInfected_tooltip".Translate());
 
             KuruModSettings.baseKuruInfectionChance = listingStandard.SliderLabeled(
-                "KuruOptions_baseKuruInfectionChance".Translate() +
-                KuruModSettings.baseKuruInfectionChance.ToStringPercent()
-                , KuruModSettings.baseKuruInfectionChance, 0f, 1f, 0.5f,
+                "KuruOptions_baseKuruInfectionChance".Translate(KuruModSettings.baseKuruInfectionChance.ToStringPercent().Named("CHANCE")),
+                KuruModSettings.baseKuruInfectionChance, 0f, 1f, 0.5f,
                 "KuruOptions_baseKuruInfectionChance_tooltip".Translate());
 
             if (listingStandard.ButtonTextLabeledPct((string)"KuruOptions_progressionSpeed".Translate(),
@@ -119,20 +121,17 @@ namespace Kuru
             listingStandard.CheckboxLabeled(
                 "KuruOptions_infectFromIdeologion".Translate(),
                 ref KuruModSettings.infectFromIdeologion,
-                "KuruOptions_infectFromIdeologion_tooltip".Translate() + KuruCause.MeatOfPawnWithCannibalIdeology
-                    .GetKuruCarrierChance().ToStringPercent());
+                "KuruOptions_infectFromIdeologion_tooltip".Translate(KuruCause.MeatOfPawnWithCannibalIdeology.GetKuruCarrierChance().ToStringPercent().Named("CHANCE")));
 
             listingStandard.CheckboxLabeled(
                 "KuruOptions_infectFromRecentIngestion".Translate(),
                 ref KuruModSettings.infectFromRecentIngestion,
-                "KuruOptions_infectFromRecentIngestion_tooltip".Translate() + KuruCause
-                    .MeatOfPawnWhoIngestedHumanMeatRecently.GetKuruCarrierChance().ToStringPercent());
+                "KuruOptions_infectFromRecentIngestion_tooltip".Translate(KuruCause.MeatOfPawnWhoIngestedHumanMeatRecently.GetKuruCarrierChance().ToStringPercent().Named("CHANCE")));
 
             listingStandard.CheckboxLabeled(
                 "KuruOptions_infectFromTraits".Translate(),
                 ref KuruModSettings.infectFromTraits,
-                "KuruOptions_infectFromTraits_tooltip".Translate() +
-                KuruCause.MeatOfPawnWithCannibalTrait.GetKuruCarrierChance().ToStringPercent());
+                "KuruOptions_infectFromTraits_tooltip".Translate(KuruCause.MeatOfPawnWithCannibalTrait.GetKuruCarrierChance().ToStringPercent().Named("CHANCE")));
             
             listingStandard.GapLine();
             
@@ -148,12 +147,15 @@ namespace Kuru
                 "KuruOptions_luciferiumCures".Translate(),
                 ref KuruModSettings.luciferiumCures,
                 "KuruOptions_luciferiumCures_tooltip".Translate());
-            
-            listingStandard.CheckboxLabeled(
-                "KuruOptions_naturalCannibalCures".Translate(),
-                ref KuruModSettings.naturalCannibalCures,
-                "KuruOptions_naturalCannibalCures_tooltip".Translate());
-            
+
+            if (ModsConfig.BiotechActive)
+            {
+                listingStandard.CheckboxLabeled(
+                    "KuruOptions_naturalCannibalCures".Translate(),
+                    ref KuruModSettings.naturalCannibalCures,
+                    "KuruOptions_naturalCannibalCures_tooltip".Translate());
+            }
+
             listingStandard.End();
             
             base.DoSettingsWindowContents(inRect);

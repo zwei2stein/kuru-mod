@@ -14,7 +14,7 @@
 		<workerClass>Kuru.MentalStateWorker_LaughingFitAll</workerClass>
 		<label>laughing fit</label>
 		<category>Misc</category>
-		<colonistsOnly>true</colonistsOnly>
+		<colonistsOnly>false</colonistsOnly>
 		<blockRandomInteraction>true</blockRandomInteraction>
 		<requiredCapacities>
 			<li>Talking</li>

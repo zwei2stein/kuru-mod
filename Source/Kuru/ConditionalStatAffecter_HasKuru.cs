@@ -9,7 +9,7 @@ namespace Kuru
 
         public override bool Applies(StatRequest req)
         {
-            if (!ModsConfig.BiotechActive || !req.HasThing || !(req.Thing is Pawn thing1) || thing1.apparel == null)
+            if (!ModsConfig.BiotechActive || !req.HasThing || !(req.Thing is Pawn thing1))
                 return false;
 
             return thing1.health.hediffSet.GetFirstHediffOfDef(KuruDefOf.KuruMod_Kuru) != null;

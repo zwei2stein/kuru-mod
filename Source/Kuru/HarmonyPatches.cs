@@ -34,9 +34,8 @@ namespace Kuru
             if (compCorpseKuruCarrying == null) return;
 
 
-            if (KuruModSettings.butcherSkillMatters)
+            if (KuruModSettings.butcherSkillMatters && butcher.skills != null)
             {
-                // 0 - 20 -> 20 skill gives 50% chance of avoiding infections
                 var butcherSkill = 0.5f * butcher.skills.AverageOfRelevantSkillsFor(KuruDefOf.Cooking) / 20;
 
                 if (Rand.Chance(butcherSkill))

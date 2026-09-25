@@ -24,7 +24,7 @@ namespace Kuru
             }
 
             if ((KuruModSettings.luciferiumCures && pawn.health.hediffSet.GetFirstHediffOfDef(KuruDefOf.LuciferiumAddiction) != null)
-                || (KuruModSettings.naturalCannibalCures && pawn.genes.HasActiveGene(KuruDefOf.KuruMod_NaturalCannibal)))
+                || (KuruModSettings.naturalCannibalCures && ModsConfig.BiotechActive && pawn.genes.HasActiveGene(KuruDefOf.KuruMod_NaturalCannibal)))
             {
                 //Luciferium cures kuru, pawn can't spawn with kuru
                 //Natural Cannibal gene also heals kuru, so pawn will not spawn with it
