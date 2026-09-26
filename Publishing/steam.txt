@@ -60,6 +60,21 @@ The natural cannibal gene does provide resistance, if you can find it.
     [*]Character Development: wants related to being infected with Kuru
 [/list]
 
+[h3]Compatible with food from[/h3]
+
+(They can be carriers if made with infected meat.)
+
+[list]
+    [*]Det's Xenotypes - Keshig
+    [*]Epochs - Tallow
+    [*]Mythic Ages: Megafauna Bestiary
+    [*]Salted Meat
+    [*]Biomes! Core
+    [*]Mashed's Ashlands
+    [*]More Birds - Extinct & Engineered
+    [*]Anomalies Expected Addon
+[/list]
+
 [hr][/hr]
 
 [url=https://github.com/zwei2stein/kuru-mod/]Source Code[/url]

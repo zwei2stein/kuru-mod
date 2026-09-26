@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+    <Operation Class="PatchOperationConditional">
+        <xpath>/Defs/ThingDef[defName="DV_GoreMust"]/comps</xpath>
+        <match Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName="DV_GoreMust"]/comps</xpath>
+            <value>
+                <li Class="Kuru.CompFoodKuruCarryingProperties">
+                    <compClass>Kuru.CompFoodKuruCarrying</compClass>
+                </li>
+            </value>
+        </match>
+        <nomatch Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName="DV_GoreMust"]</xpath>
+            <value>
+                <comps>
+                    <li Class="Kuru.CompFoodKuruCarryingProperties">
+                        <compClass>Kuru.CompFoodKuruCarrying</compClass>
+                    </li>
+                </comps>
+            </value>
+        </nomatch>
+    </Operation>
+
+    <Operation Class="PatchOperationConditional">
+        <xpath>/Defs/ThingDef[defName="DV_Gorewine"]/comps</xpath>
+        <match Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName="DV_Gorewine"]/comps</xpath>
+            <value>
+                <li Class="Kuru.CompFoodKuruCarryingProperties">
+                    <compClass>Kuru.CompFoodKuruCarrying</compClass>
+                </li>
+            </value>
+        </match>
+        <nomatch Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName="DV_Gorewine"]</xpath>
+            <value>
+                <comps>
+                    <li Class="Kuru.CompFoodKuruCarryingProperties">
+                        <compClass>Kuru.CompFoodKuruCarrying</compClass>
+                    </li>
+                </comps>
+            </value>
+        </nomatch>
+    </Operation>
+
+</Patch>

@@ -5,5 +5,17 @@
         <li>1.6</li>
         <li IfModActive="phil42.allergies">1.6/Compatibility/phil42allergies</li>
         <li IfModActive="ferny.characterdevelopment">1.6/Compatibility/fernycharacterdevelopment</li>
+        
+        <!-- modded food compats -->
+        
+        <li IfModActive="det.keshig">1.6/Compatibility/det.keshig</li>
+        <li IfModActive="det.epochstallow">1.6/Compatibility/det.epochstallow</li>
+        <li IfModActive="veterano.mythicages.megafaunabestiary">1.6/Compatibility/veterano.mythicages.megafaunabestiary</li>
+        <li IfModActive="argon.saltedmeatremake">1.6/Compatibility/argon.saltedmeatremake</li>
+        <li IfModActive="biomesteam.biomescore">1.6/Compatibility/biomesteam.biomescore</li>
+        <li IfModActive="sirmashedpotato.ashlands">1.6/Compatibility/sirmashedpotato.ashlands</li>
+        <li IfModActive="11bullets.extinctengineered">1.6/Compatibility/11bullets.extinctengineered</li>
+        <li IfModActive="fallen.anomaliesexpectedaddon">1.6/Compatibility/fallen.anomaliesexpectedaddon</li>
+        
     </v1.6>
 </loadFolders>

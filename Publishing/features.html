@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=950">
+    <title>Kuru Mod - Features</title>
+    <style>
+        /* ===== BASE STYLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 950px;
+            margin: 0 auto;
+            background-color: #1b2838;
+            color: #c6d4df;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 14px;
+            line-height: 1.5;
+            padding: 20px;
+        }
+
+        /* ===== SECTIONS ===== */
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+            padding: 10px 15px;
+            background: linear-gradient(180deg, #2a3a4a 0%, #1f2c3c 100%);
+            border-radius: 6px;
+            border: 1px solid #3a4a5a;
+        }
+
+        .section-header .icon {
+            width: 32px;
+            height: 32px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            image-rendering: auto;
+        }
+
+        .section-header h2 {
+            font-size: 22px;
+            font-weight: bold;
+            color: #e8e8e8;
+            letter-spacing: 0.5px;
+        }
+
+        .section-header .version {
+            font-size: 12px;
+            color: #6a7a8a;
+            margin-left: auto;
+        }
+
+        /* ===== TABLES ===== */
+        .feature-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            background-color: #243444;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #3a4a5a;
+        }
+
+        .feature-table th {
+            text-align: left;
+            padding: 12px 15px;
+            font-size: 14px;
+            font-weight: bold;
+            color: #e8e8e8;
+            background: linear-gradient(180deg, #2d4a62 0%, #1f3444 100%);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .feature-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #1a2838;
+        }
+
+        .feature-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .feature-table tr:nth-child(even) td {
+            background-color: rgba(42, 74, 98, 0.2);
+        }
+
+        .feature-table tr:hover td {
+            background-color: rgba(60, 80, 100, 0.3);
+        }
+
+        /* ===== GRAPHIC CELL ===== */
+        .graphic-cell {
+            width: 100px;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .graphic-cell img {
+            max-width: 80px;
+            max-height: 80px;
+            image-rendering: auto;
+            image-rendering: -moz-crisp-edges;
+            filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.8));
+        }
+
+        /* ===== DESCRIPTION CELL ===== */
+        .desc-cell {
+            width: 320px;
+            vertical-align: top;
+        }
+
+        .desc-cell h3 {
+            font-size: 15px;
+            font-weight: bold;
+            color: #e8e8e8;
+            margin-bottom: 6px;
+        }
+
+        .desc-cell p {
+            color: #a0b0c0;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+        
+        /* ===== FEATURES CELL ===== */
+        .features-cell {
+            vertical-align: top;
+        }
+
+        .features-list {
+            list-style: disc;
+            padding-left: 18px;
+            margin: 0;
+        }
+
+        .features-list li {
+            font-size: 12.5px;
+            color: #a0b0c0;
+            margin-bottom: 4px;
+            line-height: 1.4;
+        }
+
+        .features-list li strong {
+            color: #e8e8e8;
+        }
+
+        /* ===== RESPONSIVE ADJUSTMENTS (minimal for screenshot stability) ===== */
+        @media (max-width: 950px) {
+            body {
+                width: auto;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ======================================== DISEASES SECTION ======================================== -->
+<div class="section">
+    <div class="section-header">
+        <div class="icon" style="background-image: url('../../Mod/Textures/UI/Icons/Genes/KuruMod_NaturalCannibal.png'); background-size: contain;"></div>
+        <h2>Health</h2>
+    </div>
+
+    <table class="feature-table">
+        <colgroup>
+            <col style="width: 320px;">
+            <col style="width: 380px;">
+        </colgroup>
+        <thead>
+        <tr>
+            <th>Description</th>
+            <th>Features & Stats</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- KURU DISEASE -->
+        <tr>
+            <td class="desc-cell">
+                <h3>Kuru</h3>
+                <p>Neural degradation caused by eating meat contaminated with misfolded prions. Known as the <strong>laughing sickness</strong>.</p>
+                <p><strong>Causes mood instability</strong> with chances of various mental breaks. <strong>Debilitates pawns</strong>, making tasks more difficult. <strong>Progressively damages the brain</strong>, causing pain and loss of consciousness. <strong>Eventually fatal</strong>.</p>
+            </td>
+            <td class="features-cell">
+                <ul class="features-list">
+                    <li><strong>Transmission:</strong> Eating human meat (cooking does NOT prevent)</li>
+                    <li><strong>Mental breaks:</strong> Laughing Fit, Wander Confused, Insane Ramblings, Insulting Spree</li>
+                    <li><strong>Capacity reductions:</strong> Talking -10%, Moving -10%, Manipulation -10%</li>
+                    <li><strong>Brain damage:</strong> Accumulates over time, eventually fatal</li>
+                </ul>
+            </td>
+        </tr>
+
+        <!-- BRAIN DAMAGE -->
+        <tr>
+            <td class="desc-cell">
+                <h3>Brain Damage</h3>
+                <p>Permanent brain injury caused by <strong>Kuru disease progression</strong>. Represents the cumulative effects of prion damage to neural tissue.</p>
+                <p><strong>Cannot be healed naturally</strong>. Requires advanced treatment methods.</p>
+            </td>
+            <td class="features-cell">
+                <ul class="features-list">
+                    <li><strong>Permanent injury</strong></li>
+                    <li><strong>Can be fatal</strong> if brain is destroyed</li>
+                    <li><strong>Can be healed:</strong> By scar removal methods or complete brain destruction + revival</li>
+                </ul>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- ======================================== GENES SECTION ======================================== -->
+<div class="section">
+    <div class="section-header">
+        <div class="icon" style="background-image: url('../../Mod/Textures/UI/Icons/Genes/KuruMod_NaturalCannibal.png'); background-size: contain;"></div>
+        <h2>Genes</h2>
+        <span class="version">Biotech DLC</span>
+    </div>
+
+    <table class="feature-table">
+        <colgroup>
+            <col style="width: 100px;">
+            <col style="width: 320px;">
+            <col style="width: 380px;">
+        </colgroup>
+        <thead>
+        <tr>
+            <th></th>
+            <th>Description</th>
+            <th>Features & Stats</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- NATURAL CANNIBAL GENE -->
+        <tr>
+            <td class="graphic-cell">
+                <img src="../../Mod/Textures/UI/Icons/Genes/KuruMod_NaturalCannibal.png" alt="Natural Cannibal Gene Icon">
+            </td>
+            <td class="desc-cell">
+                <h3>Natural Cannibal</h3>
+                <p>An <strong>archite gene</strong> carried by pawns who have adapted to prion diseases and eating raw human meat.</p>
+                <p><strong>Provides resistance to Kuru disease</strong> - carriers will eventually have the disease removed by their immune system.</p>
+            </td>
+            <td class="features-cell">
+                <ul class="features-list">
+                    <li><strong>Kuru resistance:</strong> Immune system detects and removes prion diseases</li>
+                    <li><strong>Food poisoning resistance:</strong> 10% reduction (0.9x factor)</li>
+                    <li><strong>Immunity gain speed:</strong> +10%</li>
+                    <li><strong>Conditional bonuses (if infected):</strong></li>
+                    <li>+10% Move Speed</li>
+                    <li>+10% Work Speed Global</li>
+                    <li>+10% Social Impact</li>
+                </ul>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
