@@ -40,8 +40,10 @@ namespace Kuru
             {
                 return KuruCause.MeatOfPawnWithCannibalIdeology;
             }
-
-            if (KuruModSettings.infectFromRecentIngestion && Find.TickManager.TicksGame - pawn.mindState.lastHumanMeatIngestedTick < ProgressionSpeed.YEAR.ToTicks())
+            
+            if (KuruModSettings.infectFromRecentIngestion &&
+                pawn.mindState.lastHumanMeatIngestedTick > 0 &&
+                Find.TickManager.TicksGame - pawn.mindState.lastHumanMeatIngestedTick < ProgressionSpeed.YEAR.ToTicks())
             {
                 return KuruCause.MeatOfPawnWhoIngestedHumanMeatRecently;
             }
@@ -75,7 +77,7 @@ namespace Kuru
                     return 0.025f;
                 case KuruCause.Unknown:
                     // 0.1% is carrier
-                    // okay, it us human meat, we have no history for that, so ... unlikely, but possible kuru?
+                    // okay, it is human meat, we have no history for that, so ... unlikely, but possible kuru?
                     return 0.001f;
                 case KuruCause.None:
                 default:

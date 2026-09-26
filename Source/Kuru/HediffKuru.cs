@@ -15,12 +15,17 @@ namespace Kuru
         
         public override bool ShouldRemove => this.removalScheduled || base.ShouldRemove;
         
+        public override string LabelBase =>
+            (pawn?.RaceProps != null && !pawn.RaceProps.Humanlike)
+                ? (string)"Kuru_MadAnimalDisease".Translate(pawn.def.label.Named("SPECIES"))
+                : base.LabelBase;
+        
         public override void TickInterval(int delta)
         {
             base.TickInterval(delta);
             
             // we are storing only std dev for next event because storing ticks means that when user changes settings, 
-            // we would have wrong time scheduled and it would tick too early or too late.
+            // we would have wrong time scheduled, and it would tick too early or too late.
             var mean = KuruModSettings.progressionSpeed.ToTicks();
             var deviation = mean / 4.0f; // standard deviation from mean is 1/4 of mean.
             var nextBrainDamageInTicks = mean + (int)(deviation * this.nextBrainDamageIn);
@@ -78,8 +83,8 @@ namespace Kuru
                     pawn.health.AddHediff(crush);
                     if (PawnUtility.ShouldSendNotificationAbout(pawn))
                         Messages.Message(
-                            "MessageProgressedKuru".Translate((NamedArgument)pawn.LabelShortCap, pawn.Named("PAWN")), 
-                            (LookTargets) (Thing) pawn,
+                            "MessageProgressedKuru".Translate(pawn.Named("PAWN")), 
+                            (Thing) pawn,
                             MessageTypeDefOf.NegativeEvent);
                     if (pawn.RaceProps.Humanlike)
                         pawn.needs.mood.thoughts.memories.TryGainMemory(KuruDefOf.KuruMod_KuruAttack);

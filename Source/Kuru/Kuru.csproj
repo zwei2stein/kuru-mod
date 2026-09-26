@@ -95,6 +95,10 @@
           <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
           <Private>False</Private>
         </Reference>
+        <Reference Include="UnityEngine.IMGUIModule">
+          <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
+          <Private>False</Private>
+        </Reference>
         <Reference Include="UnityEngine.TextRenderingModule">
           <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
           <Private>False</Private>
@@ -102,12 +106,17 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="CompCorpseKuruCarrying.cs" />
+        <Compile Include="CompKuruCarrying.cs" />
         <Compile Include="HarmonyPatches.cs" />
         <Compile Include="HediffKuru.cs" />
+        <Compile Include="HediffKuruUtils.cs" />
         <Compile Include="KuruCause.cs" />
+        <Compile Include="KuruDebugActions.cs" />
         <Compile Include="KuruDefOf.cs" />
+        <Compile Include="KuruFoodCensusUtil.cs" />
         <Compile Include="KuruMod.cs" />
         <Compile Include="MentalState_LaughingFitAll.cs" />
+        <Compile Include="ProgressionSpeed.cs" />
         <Compile Include="Properties\AssemblyInfo.cs"/>
         <Compile Include="CompFoodKuruCarrying.cs" />
         <Compile Include="KuruModSettings.cs" />
@@ -116,6 +125,9 @@
     <ItemGroup>
       <None Include="App.config" />
       <None Include="packages.config" />
+    </ItemGroup>
+    <ItemGroup>
+      <Content Include="Testing\ModList.xml" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
     <Target Name="AfterBuild">

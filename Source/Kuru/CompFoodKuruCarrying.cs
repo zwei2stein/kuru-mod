@@ -3,18 +3,8 @@ using System;
 
 namespace Kuru
 {
-    public class CompFoodKuruCarrying : ThingComp
+    public class CompFoodKuruCarrying : CompKuruCarrying
     {
-        public CompFoodKuruCarryingProperties Props => (CompFoodKuruCarryingProperties)this.props;
-
-        public KuruCause cause = KuruCause.None;
-
-        public override void Initialize(CompProperties props)
-        {
-            base.Initialize(props);
-            this.cause = this.Props.defaultCause;
-        }
-
         public override void PostSplitOff(Thing piece)
         {
             base.PostSplitOff(piece);
@@ -28,18 +18,6 @@ namespace Kuru
             var comp = otherStack.TryGetComp<CompFoodKuruCarrying>();
             if (comp.cause.GetKuruCarrierChance() > this.cause.GetKuruCarrierChance())
                 this.cause = comp.cause;
-        }
-
-        public override void PostIngested(Pawn ingester)
-        {
-            //Log.Message("[KuruMod] eaten CompFoodKuruCarrying " + this.cause);
-            KuruModStatic.AddFoodKuruHediffByCause(ingester, this.parent, this.cause);
-        }
-
-        public override void PostExposeData()
-        {
-            base.PostExposeData();
-            Scribe_Values.Look(ref this.cause, "kuruCause", KuruCause.None);
         }
     }
 

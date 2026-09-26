@@ -11,14 +11,14 @@ namespace Kuru
     {
         static void Prefix(ref Pawn pawn)
         {
-            //Log.Message("[KuruMod] Generating initialHediffs for pawn");
+            if (!KuruModSettings.worldgenPawnsCanBeInfected)
+                return;
 
-            if (!KuruModSettings.worldgenPawnsCanBeInfected) return;
-
-            if (!pawn.RaceProps.Humanlike) return;
+            if (!pawn.RaceProps.Humanlike)
+                return;
 
             var cause = KuruCauseUtils.CauseFromPawn(pawn);
-            KuruModStatic.AddFoodKuruHediffByCause(pawn, null, cause);
+            HediffKuruUtils.AddFoodKuruHediffByCause(pawn, null, cause);
         }
     }
 
@@ -28,10 +28,10 @@ namespace Kuru
         static void Postfix(ref IEnumerable<Thing> __result, ref Corpse __instance, Pawn butcher)
         {
             // propagate kuru causes to butcher results if we have comp (= human corpse, human meat)
-
             var compCorpseKuruCarrying = __instance.TryGetComp<CompCorpseKuruCarrying>();
 
-            if (compCorpseKuruCarrying == null) return;
+            if (compCorpseKuruCarrying == null)
+                return;
 
             if (KuruModSettings.butcherSkillMatters && butcher?.skills != null)
             {
@@ -39,10 +39,7 @@ namespace Kuru
                 var butcherSkill = 0.5f * butcher.skills.AverageOfRelevantSkillsFor(KuruDefOf.Cooking) / 20;
 
                 if (Rand.Chance(butcherSkill))
-                {
-                    //Log.Message("[KuruMod] butcherSkill " + butcherSkill + " prevented infection");
                     return;
-                }
             }
             
             __result = ApplyCause(__result, compCorpseKuruCarrying.cause);
@@ -54,7 +51,6 @@ namespace Kuru
             {
                 if (thing.TryGetComp(out CompFoodKuruCarrying compFoodKuruCarrying))
                 {
-                    //Log.Message("[KuruMod] butcher result - applying " + cause);
                     compFoodKuruCarrying.cause = cause;
                 }
                 yield return thing;
@@ -82,12 +78,11 @@ namespace Kuru
         {
             var bestCause = KuruCause.None;
 
-            //Log.Message("[KuruMod] propagating kuru causes from ingredients to result");
-
             foreach (var ingredient in ingredients)
             {
                 var comp = ingredient.TryGetComp<CompFoodKuruCarrying>();
-                if (comp == null) continue;
+                if (comp == null)
+                    continue;
 
                 if (comp.cause.GetKuruCarrierChance() > bestCause.GetKuruCarrierChance())
                 {
@@ -95,9 +90,8 @@ namespace Kuru
                 }
             }
 
-            if (bestCause == KuruCause.None) return;
-
-            //Log.Message("[KuruMod] propagating kuru causes from ingredients to result, best cause: " + bestCause);
+            if (bestCause == KuruCause.None)
+                return;
 
             __result = ApplyCause(__result, bestCause);
         }
@@ -108,7 +102,6 @@ namespace Kuru
             {
                 if (result.TryGetComp(out CompFoodKuruCarrying compFoodKuruCarrying))
                 {
-                    //Log.Message("[KuruMod] propagating recipe, setting cause: " + cause);
                     compFoodKuruCarrying.cause = cause;
                 }
                 yield return result;

@@ -11,14 +11,13 @@ namespace Kuru
     {
         static KuruModStatic()
         {
-            //Log.Message("[KuruMod] loading!");
-            
             var patchedCorpseDefs = new HashSet<ThingDef>();
             var patchedMeatDefs = new HashSet<ThingDef>();
 
             foreach (var raceDef in DefDatabase<ThingDef>.AllDefs)
             {
-                if (raceDef.race == null || !raceDef.race.Humanlike) continue;
+                if (raceDef.race == null || !raceDef.race.Humanlike)
+                    continue;
 
                 var corpseDef = raceDef.race.corpseDef;
                 if (corpseDef != null && patchedCorpseDefs.Add(corpseDef))
@@ -39,34 +38,7 @@ namespace Kuru
 
             Log.Message("[KuruMod] loaded!");
         }
-
-        public static void AddFoodKuruHediffByCause(Pawn pawn, Thing ingestible, KuruCause cause)
-        {
-            if (cause == KuruCause.None || pawn == null)
-                return;
-
-            if (!Rand.Chance(KuruModSettings.baseKuruInfectionChance * cause.GetKuruCarrierChance()))
-                return;
-
-            if (pawn.health.hediffSet.GetFirstHediffOfDef(KuruDefOf.KuruMod_Kuru) == null)
-            {
-                pawn.health.AddHediff(HediffMaker.MakeHediff(KuruDefOf.KuruMod_Kuru, pawn,
-                    pawn.health.hediffSet.GetBrain()));
-                if (pawn.RaceProps.Humanlike)
-                    pawn.needs.mood.thoughts.memories.TryGainMemory(KuruDefOf.KuruMod_ContractedKuru);
-                
-                if (ingestible == null) return; //pawn was just generated
-
-                if (!PawnUtility.ShouldSendNotificationAbout(pawn) ||
-                    !MessagesRepeatAvoider.MessageShowAllowed("MessageFoodKuru-" + pawn.thingIDNumber.ToString(), 0.1f))
-                    return;
-                Messages.Message(
-                    "MessageFoodKuru".Translate((NamedArgument)pawn.LabelShort,
-                            (NamedArgument)ingestible.LabelCapNoCount, pawn.Named("PAWN"), ingestible.Named("FOOD"))
-                        .CapitalizeFirst(), (LookTargets)(Thing)pawn, MessageTypeDefOf.NegativeEvent);
-
-            }
-        }
+        
     }
 
     public class KuruModMod : Mod
@@ -75,7 +47,7 @@ namespace Kuru
 
         public KuruModMod(ModContentPack content) : base(content)
         {
-            this.settings = this.GetSettings<KuruModSettings>();
+            settings = GetSettings<KuruModSettings>();
         }
 
         public override void DoSettingsWindowContents(Rect inRect)
@@ -96,7 +68,7 @@ namespace Kuru
                 KuruModSettings.baseKuruInfectionChance, 0f, 1f, 0.5f,
                 "KuruOptions_baseKuruInfectionChance_tooltip".Translate());
 
-            if (listingStandard.ButtonTextLabeledPct((string)"KuruOptions_progressionSpeed".Translate(),
+            if (listingStandard.ButtonTextLabeledPct("KuruOptions_progressionSpeed".Translate(),
                     KuruModSettings.progressionSpeed.ToStringHuman(), 0.6f, TextAnchor.MiddleLeft))
             {
                 var options = new List<FloatMenuOption>();
@@ -104,10 +76,10 @@ namespace Kuru
                 {
                     var localProgressionSpeed = progressionSpeed;
                     options.Add(new FloatMenuOption(localProgressionSpeed.ToStringHuman(),
-                        (Action)(() => KuruModSettings.progressionSpeed = localProgressionSpeed)));
+                        () => KuruModSettings.progressionSpeed = localProgressionSpeed));
                 }
 
-                Find.WindowStack.Add((Window)new FloatMenu(options));
+                Find.WindowStack.Add(new FloatMenu(options));
             }
             
             listingStandard.CheckboxLabeled(
@@ -122,10 +94,14 @@ namespace Kuru
             listingStandard.Indent(gapWidth);
             listingStandard.ColumnWidth -= gapWidth;
 
-            listingStandard.CheckboxLabeled(
-                "KuruOptions_infectFromIdeologion".Translate(),
-                ref KuruModSettings.infectFromIdeologion,
-                "KuruOptions_infectFromIdeologion_tooltip".Translate(KuruCause.MeatOfPawnWithCannibalIdeology.GetKuruCarrierChance().ToStringPercent().Named("CHANCE")));
+            if (ModsConfig.IdeologyActive)
+            {
+                listingStandard.CheckboxLabeled(
+                    "KuruOptions_infectFromIdeologion".Translate(),
+                    ref KuruModSettings.infectFromIdeologion,
+                    "KuruOptions_infectFromIdeologion_tooltip".Translate(KuruCause.MeatOfPawnWithCannibalIdeology
+                        .GetKuruCarrierChance().ToStringPercent().Named("CHANCE")));
+            }
 
             listingStandard.CheckboxLabeled(
                 "KuruOptions_infectFromRecentIngestion".Translate(),
@@ -159,6 +135,36 @@ namespace Kuru
                     ref KuruModSettings.naturalCannibalCures,
                     "KuruOptions_naturalCannibalCures_tooltip".Translate());
             }
+            
+            listingStandard.GapLine();
+            
+            listingStandard.Outdent(gapWidth);
+            listingStandard.ColumnWidth += gapWidth;
+            
+            if (Prefs.DevMode)
+            {
+                listingStandard.Label("KuruOptions_devtools_section_label".Translate());
+
+                listingStandard.Indent(gapWidth);
+                listingStandard.ColumnWidth -= gapWidth;
+
+                if (listingStandard.ButtonText("KuruOptions_devtools_FoodDefCensus_button_label".Translate()))
+                {
+                    KuruFoodCensusUtil.FoodCensus();
+                    Find.WindowStack.Add(
+                        new Dialog_MessageBox(
+                            "KuruOptions_devtools_FoodDefCensus_TraifDefCensus_CSVCopied".Translate()
+                        )
+                    );
+                }
+
+                listingStandard.Outdent(gapWidth);
+                listingStandard.ColumnWidth += gapWidth;
+                
+                listingStandard.GapLine();
+                
+            }
+            
 
             listingStandard.End();
             
@@ -169,51 +175,6 @@ namespace Kuru
         {
             return "KuruModName".Translate();
         }
-    }
-
-    public static class ProgressionSpeedEnumExtensions
-    {
-        public static string ToStringHuman(this ProgressionSpeed mode)
-        {
-            switch (mode)
-            {
-                case ProgressionSpeed.SECCOND:
-                    return "ProgressionSpeed_SECOND".Translate();
-                case ProgressionSpeed.DAY:
-                    return "ProgressionSpeed_DAY".Translate();
-                case ProgressionSpeed.QUADRUM:
-                    return "ProgressionSpeed_QUADRUM".Translate();
-                case ProgressionSpeed.YEAR:
-                    return "ProgressionSpeed_YEAR".Translate();
-                default:
-                    throw new NotImplementedException();
-            }
-        }
-
-        public static int ToTicks(this ProgressionSpeed mode)
-        {
-            switch (mode)
-            {
-                case ProgressionSpeed.SECCOND:
-                    return 60;
-                case ProgressionSpeed.DAY:
-                    return 60000;
-                case ProgressionSpeed.QUADRUM:
-                    return 900000;
-                case ProgressionSpeed.YEAR:
-                    return 3600000;
-                default:
-                    throw new NotImplementedException();
-            }
-        }
-    }
-
-    public enum ProgressionSpeed : byte
-    {
-        SECCOND,
-        DAY,
-        QUADRUM,
-        YEAR
     }
 
 }

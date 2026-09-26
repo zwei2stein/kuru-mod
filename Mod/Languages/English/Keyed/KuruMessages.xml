@@ -5,7 +5,7 @@
     
     <Kuru_StatsReport_HasKuru>infected with kuru</Kuru_StatsReport_HasKuru>
 
-    <MessageFoodKuru>{PAWN_labelShort} has started exhibiting symptoms of Kuru after eating: {FOOD_labelShort}.</MessageFoodKuru>
+    <MessageFoodKuru>{PAWN_labelShort} has started exhibiting symptoms of {DISEASE} after eating: {FOOD_labelShort}.</MessageFoodKuru>
 
     <MessageProgressedKuru>{PAWN_labelShort} suffered brain damage from Kuru.</MessageProgressedKuru>
 
@@ -13,6 +13,10 @@
 
     <MessageHealedKuruNaturalCannibal>Kuru infection disappeared from {PAWN_labelShort} thanks to them being a natural cannibal.</MessageHealedKuruNaturalCannibal>
 
+    <Kuru_MadAnimalDisease>mad {SPECIES} disease</Kuru_MadAnimalDisease>
+    
+    <!-- options -->
+    
     <KuruOptions_baseKuruInfectionChance>Base infection chance: {CHANCE}.</KuruOptions_baseKuruInfectionChance>
     <KuruOptions_baseKuruInfectionChance_tooltip>Different sources have different chances of spreading infection (eating Kuru-infected human has a very high chance, eating random human has a very, very low chance). This is a global setting that affects all of them.</KuruOptions_baseKuruInfectionChance_tooltip>
 
@@ -46,5 +50,12 @@
 
     <KuruOptions_naturalCannibalCures>Natural Cannibal gene</KuruOptions_naturalCannibalCures>
     <KuruOptions_naturalCannibalCures_tooltip>Pawns with the Natural Cannibal gene will eventually be cured of Kuru; it might take a few days or a few years, based on brain damage speed setting. This setting also turns off pawns with the Natural Cannibal gene as vectors for Kuru disease—you cannot get Kuru by eating a pawn with the Natural Cannibal gene. Default: ON.</KuruOptions_naturalCannibalCures_tooltip>
+
+    <!-- dev tools in options -->
+
+    <KuruOptions_devtools_section_label>Dev tools</KuruOptions_devtools_section_label>
+    <KuruOptions_devtools_FoodDefCensus_button_label>Copy CSV list of food defs with human meat ingredient to clipboard</KuruOptions_devtools_FoodDefCensus_button_label>
+    <KuruOptions_devtools_FoodDefCensus_TraifDefCensus_CSVCopied>CSV of food defs with human meat ingredient report copied to clipboard.</KuruOptions_devtools_FoodDefCensus_TraifDefCensus_CSVCopied>
+
 
 </LanguageData>

@@ -5,7 +5,7 @@ namespace Kuru
 {
     public class ConditionalStatAffecter_HasKuru : ConditionalStatAffecter
     {
-        public override string Label => (string)"Kuru_StatsReport_HasKuru".Translate();
+        public override string Label => "Kuru_StatsReport_HasKuru".Translate();
 
         public override bool Applies(StatRequest req)
         {
