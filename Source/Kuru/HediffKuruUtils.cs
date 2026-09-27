@@ -5,6 +5,15 @@ namespace Kuru
 {
     public class HediffKuruUtils
     {
+        // pawn.Faction == Faction.OfPlayer -> so that ghouls and tamed wildmen can get messages too.
+        public static bool ShouldNotifyAboutKuru(Pawn pawn)
+        {
+            if (PawnUtility.ShouldSendNotificationAbout(pawn))
+                return true;
+ 
+            return pawn.IsSubhuman && pawn.Faction == Faction.OfPlayer;
+        }
+
         public static void AddFoodKuruHediffByCause(Pawn pawn, Thing ingestible, KuruCause cause)
         {
             if (cause == KuruCause.None || pawn == null)
@@ -23,7 +32,7 @@ namespace Kuru
                 if (ingestible == null)
                     return; //pawn was just generated
 
-                if (!PawnUtility.ShouldSendNotificationAbout(pawn) ||
+                if (!ShouldNotifyAboutKuru(pawn) ||
                     !MessagesRepeatAvoider.MessageShowAllowed("MessageFoodKuru-" + pawn.thingIDNumber.ToString(), 0.1f))
                     return;
 

@@ -6,7 +6,6 @@ namespace Kuru
 {
     public class HediffKuru : Hediff
     {
-
         private static readonly Random Rand = new Random(); 
         
         private int lastBrainDamageTick = 0;
@@ -41,7 +40,7 @@ namespace Kuru
                 if (KuruModSettings.luciferiumCures && pawn.health.hediffSet.GetFirstHediffOfDef(KuruDefOf.LuciferiumAddiction) != null)
                 {
                     this.removalScheduled = true;
-                    if (PawnUtility.ShouldSendNotificationAbout(pawn))
+                    if (HediffKuruUtils.ShouldNotifyAboutKuru(pawn))
                         Messages.Message(
                             "MessageHealedKuruLuciferium".Translate(pawn.Named("PAWN"), LabelBase.CapitalizeFirst().Named("DISEASE")), 
                             (LookTargets) (Thing) pawn,
@@ -53,7 +52,7 @@ namespace Kuru
                 if (KuruModSettings.naturalCannibalCures && ModsConfig.BiotechActive && pawn.genes != null && pawn.genes.HasActiveGene(KuruDefOf.KuruMod_NaturalCannibal))
                 {
                     this.removalScheduled = true;
-                    if (PawnUtility.ShouldSendNotificationAbout(pawn))
+                    if (HediffKuruUtils.ShouldNotifyAboutKuru(pawn))
                         Messages.Message(
                             "MessageHealedKuruNaturalCannibal".Translate(pawn.Named("PAWN")), 
                             (LookTargets) (Thing) pawn,
@@ -81,7 +80,7 @@ namespace Kuru
                 else
                 {
                     pawn.health.AddHediff(crush);
-                    if (PawnUtility.ShouldSendNotificationAbout(pawn))
+                    if (HediffKuruUtils.ShouldNotifyAboutKuru(pawn))
                         Messages.Message(
                             "MessageProgressedKuru".Translate(pawn.Named("PAWN"), LabelBase.CapitalizeFirst().Named("DISEASE")), 
                             (Thing) pawn,

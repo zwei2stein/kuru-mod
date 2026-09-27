@@ -1,11 +1,12 @@
 using LudeonTK;
+using RimWorld;
 using Verse;
 
 namespace Kuru
 {
     public static class KuruDebugActions
     {
-        [DebugAction("Kuru", "Inspect kuru cause (click a thing)", actionType = DebugActionType.ToolMap,
+        [DebugAction("Kuru", "Inspect Kuru cause (click a thing)", actionType = DebugActionType.ToolMap,
             allowedGameStates = AllowedGameStates.PlayingOnMap)]
         private static void InspectKuruCause()
         {
@@ -23,12 +24,17 @@ namespace Kuru
                 var comp = thing.TryGetComp<CompKuruCarrying>();
                 if (comp == null)
                 {
-                    Log.Message("[KuruMod] " + thing.LabelCap + " (" + thing.def.defName + ") - no CompKuruCarrying");
+                    var message = "[KuruMod] " + thing.LabelCap + " (" + thing.def.defName + ") - no CompKuruCarrying";
+                    Log.Message(message);
+                    Messages.Message(message, MessageTypeDefOf.NegativeEvent);
                 }
                 else
                 {
-                    Log.Message("[KuruMod] " + thing.LabelCap + " (" + thing.def.defName + ") - cause: " +
-                                comp.cause + ", carrier chance: " + comp.cause.GetKuruCarrierChance().ToStringPercent());
+                    var message = "[KuruMod] " + thing.LabelCap + " (" + thing.def.defName + ") - cause: " +
+                                  comp.cause + ", carrier chance: " +
+                                  comp.cause.GetKuruCarrierChance().ToStringPercent();
+                    Log.Message(message);
+                    Messages.Message(message, MessageTypeDefOf.NegativeEvent);
                 }
             }
         }
