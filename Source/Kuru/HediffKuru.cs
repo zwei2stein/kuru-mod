@@ -43,14 +43,14 @@ namespace Kuru
                     this.removalScheduled = true;
                     if (PawnUtility.ShouldSendNotificationAbout(pawn))
                         Messages.Message(
-                            "MessageHealedKuruLuciferium".Translate(pawn.Named("PAWN")), 
+                            "MessageHealedKuruLuciferium".Translate(pawn.Named("PAWN"), LabelBase.CapitalizeFirst().Named("DISEASE")), 
                             (LookTargets) (Thing) pawn,
                             MessageTypeDefOf.PositiveEvent);
-                    if (pawn.RaceProps.Humanlike)
+                    if (pawn.needs?.mood != null)
                         pawn.needs.mood.thoughts.memories.TryGainMemory(KuruDefOf.KuruMod_KuruCured);
                     return;
                 }
-                if (KuruModSettings.naturalCannibalCures && ModsConfig.BiotechActive && pawn.genes.HasActiveGene(KuruDefOf.KuruMod_NaturalCannibal))
+                if (KuruModSettings.naturalCannibalCures && ModsConfig.BiotechActive && pawn.genes != null && pawn.genes.HasActiveGene(KuruDefOf.KuruMod_NaturalCannibal))
                 {
                     this.removalScheduled = true;
                     if (PawnUtility.ShouldSendNotificationAbout(pawn))
@@ -58,7 +58,7 @@ namespace Kuru
                             "MessageHealedKuruNaturalCannibal".Translate(pawn.Named("PAWN")), 
                             (LookTargets) (Thing) pawn,
                             MessageTypeDefOf.PositiveEvent);
-                    if (pawn.RaceProps.Humanlike)
+                    if (pawn.needs?.mood != null)
                         pawn.needs.mood.thoughts.memories.TryGainMemory(KuruDefOf.KuruMod_KuruCured);
                     return;
                 }
@@ -83,10 +83,10 @@ namespace Kuru
                     pawn.health.AddHediff(crush);
                     if (PawnUtility.ShouldSendNotificationAbout(pawn))
                         Messages.Message(
-                            "MessageProgressedKuru".Translate(pawn.Named("PAWN")), 
+                            "MessageProgressedKuru".Translate(pawn.Named("PAWN"), LabelBase.CapitalizeFirst().Named("DISEASE")), 
                             (Thing) pawn,
                             MessageTypeDefOf.NegativeEvent);
-                    if (pawn.RaceProps.Humanlike)
+                    if (pawn.needs?.mood != null)
                         pawn.needs.mood.thoughts.memories.TryGainMemory(KuruDefOf.KuruMod_KuruAttack);
                 }
 

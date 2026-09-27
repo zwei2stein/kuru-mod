@@ -24,7 +24,7 @@ namespace Kuru
             }
 
             if ((KuruModSettings.luciferiumCures && pawn.health.hediffSet.GetFirstHediffOfDef(KuruDefOf.LuciferiumAddiction) != null)
-                || (KuruModSettings.naturalCannibalCures && ModsConfig.BiotechActive && pawn.genes.HasActiveGene(KuruDefOf.KuruMod_NaturalCannibal)))
+                || (KuruModSettings.naturalCannibalCures && ModsConfig.BiotechActive && pawn.genes != null && pawn.genes.HasActiveGene(KuruDefOf.KuruMod_NaturalCannibal)))
             {
                 //Luciferium cures kuru, pawn can't spawn with kuru
                 //Natural Cannibal gene also heals kuru, so pawn will not spawn with it
@@ -40,7 +40,7 @@ namespace Kuru
             {
                 return KuruCause.MeatOfPawnWithCannibalIdeology;
             }
-            
+
             if (KuruModSettings.infectFromRecentIngestion &&
                 pawn.mindState.lastHumanMeatIngestedTick > 0 &&
                 Find.TickManager.TicksGame - pawn.mindState.lastHumanMeatIngestedTick < ProgressionSpeed.YEAR.ToTicks())

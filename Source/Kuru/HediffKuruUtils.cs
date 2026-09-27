@@ -17,7 +17,7 @@ namespace Kuru
             {
                 pawn.health.AddHediff(HediffMaker.MakeHediff(KuruDefOf.KuruMod_Kuru, pawn,
                     pawn.health.hediffSet.GetBrain()));
-                if (pawn.RaceProps.Humanlike)
+                if (pawn.needs?.mood != null)
                     pawn.needs.mood.thoughts.memories.TryGainMemory(KuruDefOf.KuruMod_ContractedKuru);
                 
                 if (ingestible == null)

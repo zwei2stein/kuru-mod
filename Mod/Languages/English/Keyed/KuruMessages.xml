@@ -3,13 +3,13 @@
 
     <KuruModName>Kuru Mod</KuruModName>
     
-    <Kuru_StatsReport_HasKuru>infected with kuru</Kuru_StatsReport_HasKuru>
+    <Kuru_StatsReport_HasKuru>infected with Kuru</Kuru_StatsReport_HasKuru>
 
     <MessageFoodKuru>{PAWN_labelShort} has started exhibiting symptoms of {DISEASE} after eating: {FOOD_labelShort}.</MessageFoodKuru>
 
-    <MessageProgressedKuru>{PAWN_labelShort} suffered brain damage from Kuru.</MessageProgressedKuru>
+    <MessageProgressedKuru>{PAWN_labelShort} suffered brain damage from {DISEASE}.</MessageProgressedKuru>
 
-    <MessageHealedKuruLuciferium>Luciferium mechanites adapted to Kuru and removed it from {PAWN_labelShort}.</MessageHealedKuruLuciferium>
+    <MessageHealedKuruLuciferium>Luciferium mechanites adapted to {DISEASE} and removed it from {PAWN_labelShort}.</MessageHealedKuruLuciferium>
 
     <MessageHealedKuruNaturalCannibal>Kuru infection disappeared from {PAWN_labelShort} thanks to them being a natural cannibal.</MessageHealedKuruNaturalCannibal>
 
@@ -56,6 +56,5 @@
     <KuruOptions_devtools_section_label>Dev tools</KuruOptions_devtools_section_label>
     <KuruOptions_devtools_FoodDefCensus_button_label>Copy CSV list of food defs with human meat ingredient to clipboard</KuruOptions_devtools_FoodDefCensus_button_label>
     <KuruOptions_devtools_FoodDefCensus_TraifDefCensus_CSVCopied>CSV of food defs with human meat ingredient report copied to clipboard.</KuruOptions_devtools_FoodDefCensus_TraifDefCensus_CSVCopied>
-
 
 </LanguageData>
